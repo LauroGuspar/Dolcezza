@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolcezza -  Reposteria</title>
+  <ink rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,41 +21,103 @@
   </div>
 
   <div class="header_right header-middle-icon">
-<!-------------- Carrito ------------------>
-    <div class="header-middle-icon-item" id="Carrito">
-      <a href="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src="img/carrito.png" alt>
-        <span>0 item(s)</span>
-      </a>
+    <nav>
+      <div class="menu-hamburguesa" id="menu-toggle">
+        <span>&#9776;</span>
+      </div>
+      <ul class="nav-list" id="nav-list">
+        <!-------------- Carrito ------------------>
+        <li id="Carrito">
+          <a href="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="img/carrito.png" alt>
+            <span>0 item(s)</span>
+          </a>
+        </li>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/Postres/Postres.html">Postres</a></li>
+        <li><a href="/Postres/Salados.html">Salados</a></li>
+        <li><a href="/Postres/Chocolateria.html">Chocolateria</a></li>
+        <li><a href="/Postres/Dulces.html">Dulces</a></li>
+        <li><a href="/Postres/Contacto.html">Contacto</a></li>
     </div>
-<!-------------- Menu Hamburgueza ------------------>
-          <li>
-            <a href="/Postres/Dulces">Dulces</a>
-          </li>
-          <li>
-            <a href="/Postres/Chocolateria">Chocolateria</a>
-          </li>
-          <li>
-            <a href="/Postres/Salados">Salados</a>
-          </li>
+      </ul>
+    </nav>
+ 
   </div>
 </header>
 <!-- Cuerpo -->
 <main class="main">
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
-  <div class="espaciado"> ewsasascacascc </div>
+  <div class="main-container">
+    <div class="main-container-item">
+      <div class="carrusel-wrapper">
+        <button class="btn-izq">&#10094;</button>
+        <div class="carrusel-track" id="carruselTrack">
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen1.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen2.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen3.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen4.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen5.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen1.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen2.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen3.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen4.jpg" class="image-carrusel">
+                </div>
+            </div>
+            <div class="postres">
+                <div class="imagen_muestra">
+                    <img src="img/Carrusel/imagen5.jpg" class="image-carrusel">
+                </div>
+            </div>
+        </div>
+        <button class="btn-der">&#10095;</button>
+      </div>
+      <h2>Bienvenidos a Dolcezza</h2>
+      <p>La mejor repostería de la ciudad, donde la calidad y el sabor se unen para crear experiencias inolvidables.</p>
+    </div>
+    <div class="main-container-item">
+      <img src="img/dulces.jpg" alt="Dulces">
+    </div>
+      <img src="img/chocolates.jpg" alt="Chocolates">
+
+    <div class="main-container-item">
+      <h2>Chocolatería</h2>
+      <p>Descubre nuestra variedad de chocolates artesanales, elaborados con los mejores ingredientes.</p>
+    </div>
+  </div>
 </main>
 <!-- Footer -->
 <footer>
@@ -68,6 +132,7 @@
   </a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
 <script src="script.js"></script>
 
 </body>

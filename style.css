@@ -1,11 +1,10 @@
 /* Estilos generales */
-+ {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-div .espacio {
-}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -30,17 +29,16 @@ header {
     background-color: #FFD9E0;
     font-family: "Comic Sans MS", serif;
     color: white;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height:70px;
     z-index: 1;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    padding-right: 20px;
     justify-content: space-between;
     align-items: center;
     display: flex;
-    box-sizing: border-box;
 }
 
 /*Cabecera*/
@@ -58,73 +56,122 @@ header {
     height: auto;
 }
 
-/*Cabecera Derecha*/
+/* Menú Hamburguesa */
 
-.header-middle-icon{
+header nav ul {
+    width: 100%;
+    background-color: rgb(255, 217, 224,0.8);
+    text-align: unset;
+    border-radius: 10px;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 10px;
+    color: coral;
+    text-decoration: none;
+}
+
+header nav ul li a:hover{
+    text-decoration: underline;
+    color:chocolate
+}
+
+.menu-hamburguesa {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 2px;
-    /* padding-right: 10rem; */
-}
-.header-middle-icon-item a svg{
-    fill:#fff;
-    width:20px;
+    cursor: pointer;
+    font-size: 30px;
+    /* margin-right: 0px; */
+    margin-left: 105px; /* Mover hacia la izquierda */
+    position: relative; /* Asegurar que no salga de la pantalla */
 }
 
-.header-middle-icon-item a:last-child{
-    margin:0;
+.nav-list {
+    display: none;
+    position: absolute;
+    top: 100%; /* Aparece debajo del botón */
+    width: 135px;
+    
+    left: 0px;
+    list-style: none;
+    padding: 10px 0px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+.nav-list.active {
+    display: block;
 }
 
-.header-middle-icon-item{
-    margin-right:20px;
-    padding-right:20px;
-    border-right:1px solid #fff;
-}
-
-.header-middle-icon-item:last-child{
-    margin-right:0px;
-    padding-right:0px;
-    border-right:0;
-}
-
-.header-middle-icon-item img{
-    width:33px;
-}
-
-.header-middle-icon-item span{
-    margin-left:7px;
-    color:#fff;
-}
-
-.header-middle-icon-item{
-    display: flex;
-    align-items: center;
-}
-
-.header-middle-icon-item a{
-    display: flex;
-    align-items: center;
-    color:#fff;
-    margin-right:15px;
+li#Carrito img {
+    width: 30px;
 }
 
 /* Cuerpo */
+.cuerpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-/* Sección de Suscripción */
-#suscripcion {
-    text-align: center;
-    background-color: #333;
+main{
+    padding:20px;
+}
+
+
+/* -------------------- CARRUSEL -------------------- */
+.carrusel-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.postres {
+    flex-shrink: 0;
+    width: calc(25% - 20px);
+    max-width: 250px;
+    margin: 0;
+}
+
+.postres img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.btn-izq,
+.btn-der {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    user-select: none;
 }
 
-#suscripcion h3 {
-    font-size: 1.5em;
+.btn-izq {
+    left: 5%;
 }
 
-#suscripcion .cta {
-    background-color: #28a745;
+.btn-der {
+    right: 5%;
 }
 
 /* Footer */
@@ -169,20 +216,16 @@ footer img{
     }
 }
 @media screen and (max-width: 768px) {
-    .contenedor-libros {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     header nav ul {
-        flex-direction: column;
-        display: none;
         width: 100%;
-        background-color: #ce1c1a;
-        text-align: center;
+        background-color: rgb(255, 217, 224,0.9);
+        text-align: unset;
+        border-radius: 10px;      
     }
 
     header nav ul li {
-        margin: 10px 0;
+        margin: 1px 0;
     }
 
     header nav ul li a {
@@ -190,19 +233,42 @@ footer img{
         padding: 10px;
     }
 
-    .nav-list.active {
-        display: flex;
+    .header-middle-icon-item {
+        display: none;
     }
+    
+    .nav-list #Carrito {
+        display: block;
+    }
+    
+    .header_logo h1{
+        margin-left: 0px;
+        margin-right: 60px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 25px;
+    }
+
+    header{
+        padding-left:15px;
+    }
+
 }
 
-
 @media screen and (max-width: 480px) {
-    .contenedor-libros {
-        grid-template-columns: 1fr;
+    .header_logo h1{
+        margin-left: 0px;
+        margin-right:15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
     }
-
-    .libro img {
-        width: 90%;
+    .header_logo{
+        margin-right: 10px;
     }
-
+    header{
+        padding: 10px;
+    }
 }
