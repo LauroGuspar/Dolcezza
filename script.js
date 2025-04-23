@@ -80,38 +80,72 @@ document.querySelectorAll("nav ul li").forEach(item => {
 // ============================
 //        CAROUSEL
 // ============================
-document.querySelectorAll('.carrusel-wrapper').forEach(wrapper => {
-    const track = wrapper.querySelector('.carrusel-track');
-    const btnIzq = wrapper.querySelector('.btn-izq');
-    const btnDer = wrapper.querySelector('.btn-der');
-    const items = wrapper.querySelectorAll('.postres');
+let imagenes = [
+    {
+        "url": "img/Carrusel/img1.jpg",
+        "nombre": "Titulo",
+        "descripcion": "Texto"
 
-    const visibleItems = 4;
-    const itemWidth = items[0].getBoundingClientRect().width + 20;
-    let scrollIndex = 0;
-    const maxScrollIndex = Math.max(0, items.length - visibleItems);
+    },
+    {
+        "url": "img/Carrusel/img2.jpg",
+        "nombre": "Titulo",
+        "descripcion": "Texto"
 
-    function updateButtons() {
-        btnIzq.style.display = scrollIndex <= 0 ? 'none' : 'block';
-        btnDer.style.display = scrollIndex >= maxScrollIndex ? 'none' : 'block';
+    },
+    {
+        "url": "img/Carrusel/img3.jpg",
+        "nombre": "Titulo",
+        "descripcion": "Texto"
+
+    },
+]
+
+let atras = document.getElementById('atras');
+let adelante = document.getElementById('adelante');
+let imagen = document.getElementById('img');
+let puntos = document.getElementById('puntos');
+let texto = document.getElementById('texto')
+let actual = 0
+posicionCarrusel()
+
+atras.addEventListener('click', function(){
+    actual -=1
+
+    if (actual == -1){
+        actual = imagenes.length - 1
     }
 
-    btnIzq.addEventListener('click', () => {
-        if (scrollIndex > 0) {
-            scrollIndex--;
-            track.style.transform = `translateX(-${scrollIndex * itemWidth}px)`;
-            updateButtons();
-        }
-    });
+    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
+    texto.innerHTML = `
+    <h3>${imagenes[actual].nombre}</h3>
+    <p>${imagenes[actual].descripcion}</p>
+    `
+    posicionCarrusel()
+})  
+adelante.addEventListener('click', function(){
+    actual +=1
 
-    btnDer.addEventListener('click', () => {
-        if (scrollIndex < maxScrollIndex) {
-            scrollIndex++;
-            track.style.transform = `translateX(-${scrollIndex * itemWidth}px)`;
-            updateButtons();
-        }
-    });
+    if (actual == imagenes.length){
+        actual = 0
+    }
 
-    track.style.animation = 'none';
-    updateButtons();
-});
+    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`
+    texto.innerHTML = `
+    <h3>${imagenes[actual].nombre}</h3>
+    <p>${imagenes[actual].descripcion}</p>
+    `
+    posicionCarrusel()
+})  
+
+function posicionCarrusel() {
+    puntos.innerHTML = ""
+    for (var i = 0; i <imagenes.length; i++){
+        if(i == actual){
+            puntos.innerHTML += '<p class="bold">.<p>'
+        }
+        else{
+            puntos.innerHTML += '<p>.<p>'
+        }
+    } 
+}
