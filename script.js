@@ -8,14 +8,14 @@ menuToggle.addEventListener("click", (e) => {
     e.stopPropagation(); // Evitar que el clic se propague al documento
     navList.classList.toggle("active");
     });
-    
+
     // Ocultar el menú al hacer clic fuera de él
     document.addEventListener("click", () => {
     if (navList.classList.contains("active")) {
         navList.classList.remove("active");
     }
     });
-    
+
     // Evitar que el clic dentro del menú lo cierre
     navList.addEventListener("click", (e) => {
      e.stopPropagation();
@@ -75,7 +75,7 @@ document.querySelectorAll("nav ul li").forEach(item => {
             submenu.classList.toggle("open");
         }
     });
-}); 
+});
 
 // ============================
 //        CAROUSEL
@@ -83,20 +83,20 @@ document.querySelectorAll("nav ul li").forEach(item => {
 let imagenes = [
     {
         "url": "img/Carrusel/img1.jpg",
-        "nombre": "Titulo",
-        "descripcion": "Texto"
+        "nombre": "Brownie",
+        "descripcion": "Un postre de chocolate húmedo"
 
     },
     {
         "url": "img/Carrusel/img2.jpg",
-        "nombre": "Titulo",
-        "descripcion": "Texto"
+        "nombre": "Torta de Chocolate",
+        "descripcion": "Exclusiva para los amantes del chocolate"
 
     },
     {
         "url": "img/Carrusel/img3.jpg",
-        "nombre": "Titulo",
-        "descripcion": "Texto"
+        "nombre": " Cheesecake de Maracuyá",
+        "descripcion": "Para aquellos que les encanta el cítrico"
 
     },
 ]
@@ -122,7 +122,7 @@ atras.addEventListener('click', function(){
     <p>${imagenes[actual].descripcion}</p>
     `
     posicionCarrusel()
-})  
+})
 adelante.addEventListener('click', function(){
     actual +=1
 
@@ -136,16 +136,50 @@ adelante.addEventListener('click', function(){
     <p>${imagenes[actual].descripcion}</p>
     `
     posicionCarrusel()
-})  
+})
 
 function posicionCarrusel() {
-    puntos.innerHTML = ""
-    for (var i = 0; i <imagenes.length; i++){
-        if(i == actual){
-            puntos.innerHTML += '<p class="bold">.<p>'
-        }
-        else{
-            puntos.innerHTML += '<p>.<p>'
-        }
-    } 
+    puntos.innerHTML = "";
+    imagenes.forEach((_, i) => {
+        const punto = document.createElement("span");
+        punto.textContent = "●";
+        punto.className = i === actual ? "activo" : "";
+        punto.addEventListener("click", () => {
+            actual = i;
+            imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`;
+            texto.innerHTML = `
+                <h3>${imagenes[actual].nombre}</h3>
+                <p>${imagenes[actual].descripcion}</p>
+            `;
+            posicionCarrusel();
+        });
+        puntos.appendChild(punto);
+    });
+}
+
+// ============================
+//        CARRITO
+// ============================
+
+let carrito = [];
+let total = 0;
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const totalTexto = document.getElementById("total-carrito");
+
+    lista.innerHTML = "";
+    carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - S/${item.precio.toFixed(2)}`;
+        lista.appendChild(li);
+    });
+
+    totalTexto.textContent = total.toFixed(2);
 }
