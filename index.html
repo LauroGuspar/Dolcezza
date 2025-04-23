@@ -70,99 +70,81 @@
           <img src="img/adelante.svg" alt="adelante" loading="lazy">
       </div>
     </div>
-    <div class="#puntos {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
+    <div class="#puntos" id="puntos">●</div> 
 
-#puntos span {
-    font-size: 24px;
-    cursor: pointer;
-    color: #f7b2d9; /* rosado clarito */
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+  <!-- Vista previa -->
+  <section class="vista-previa">
+    <img src="img/dolcezza.png" alt="Banner de postres">
+  </section>
 
-#puntos span.activo {
-    color: #ec5ca6; /* rosado fuerte */
-    transform: scale(1.4);
-}puntos" id="puntos">●</div>
+  <!-- Catálogo -->
+  <section class="catalogo">
+    <h2>Nuestros Productos</h2>
+    <div class="productos-grid">
+      <div class="producto">
+        <img src="img/Catálogo/Tortal_Chocolate.jpg" alt="Torta de Chocolate">
+        <h3>Torta de Chocolate</h3>
+        <p>S/15.00</p>
+        <button onclick="agregarAlCarrito('Torta de Chocolate', 15)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cupcake de Fresa">
+        <h3>Cheesecake de Fresa</h3>
+        <p>S/15.00</p>
+        <button onclick="agregarAlCarrito('Cheesecake de Fresa', 15.00)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Chocotejas.webp" alt="Chocotejas artesanales">
+        <h3>Chocotejas artesanales</h3>
+        <p>S/3.50</p>
+        <button onclick="agregarAlCarrito('Chocotejas artesanales', 3.5)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Pastel_Blanco.jpg" alt="Pastel Blanco">
+        <h3>Pastel Blanco</h3>
+        <p>S/10.00</p>
+        <button onclick="agregarAlCarrito('Pastel Blanco', 10.00)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Cheesecake de Maracuyá">
+        <h3>Cheesecake de Maracuyá</h3>
+        <p>S/15.00</p>
+        <button onclick="agregarAlCarrito('Cheesecake de Maracuyá', 15.00)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Brownie.jpg" alt="Brownie">
+        <h3>Brownie</h3>
+        <p>S/10.00</p>
+        <button onclick="agregarAlCarrito('Brownie', 10.00)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Macarrones.jpeg" alt="Macarrones">
+        <h3>Macarrones</h3>
+        <p>S/10.00</p>
+        <button onclick="agregarAlCarrito('Macarrones', 10.00)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Chocochip.jpg" alt="Galleta de Chocochip">
+        <h3>Galleta de Chocochip</h3>
+        <p>S/5.50</p>
+        <button onclick="agregarAlCarrito('Galleta de Chocochip', 5.50)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/trufas.jpg" alt="Trufas">
+        <h3>Trufas</h3>
+        <p>S/2.50</p>
+        <button onclick="agregarAlCarrito('Trufas', 2.50)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/Catálogo/Mousse_Limon.jpg" alt="Mousse de Limón">
+        <h3>Mousse de Limón</h3>
+        <p>S/13.00</p>
+        <button onclick="agregarAlCarrito('Mousse de Limón', 13.00)">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
 </main>
-
-
-<!-- Vista previa -->
-<section class="vista-previa">
-  <img src="img/dolcezza.png" alt="Banner de postres">
-</section>
-
-<!-- Catálogo -->
-<section class="catalogo">
-  <h2>Nuestros Productos</h2>
-  <div class="productos-grid">
-    <div class="producto">
-      <img src="img/Catálogo/Tortal_Chocolate.jpg" alt="Torta de Chocolate">
-      <h3>Torta de Chocolate</h3>
-      <p>S/15.00</p>
-      <button onclick="agregarAlCarrito('Torta de Chocolate', 15)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cupcake de Fresa">
-      <h3>Cheesecake de Fresa</h3>
-      <p>S/15.00</p>
-      <button onclick="agregarAlCarrito('Cheesecake de Fresa', 15.00)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Chocotejas.webp" alt="Chocotejas artesanales">
-      <h3>Chocotejas artesanales</h3>
-      <p>S/3.50</p>
-      <button onclick="agregarAlCarrito('Chocotejas artesanales', 3.5)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Pastel_Blanco.jpg" alt="Pastel Blanco">
-      <h3>Pastel Blanco</h3>
-      <p>S/10.00</p>
-      <button onclick="agregarAlCarrito('Pastel Blanco', 10.00)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Cheesecake de Maracuyá">
-      <h3>Cheesecake de Maracuyá</h3>
-      <p>S/15.00</p>
-      <button onclick="agregarAlCarrito('Cheesecake de Maracuyá', 15.00)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Brownie.jpg" alt="Brownie">
-      <h3>Brownie</h3>
-      <p>S/10.00</p>
-      <button onclick="agregarAlCarrito('Brownie', 10.00)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Macarrones.jpeg" alt="Macarrones">
-      <h3>Macarrones</h3>
-      <p>S/10.00</p>
-      <button onclick="agregarAlCarrito('Macarrones', 10.00)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Chocochip.jpg" alt="Galleta de Chocochip">
-      <h3>Galleta de Chocochip</h3>
-      <p>S/5.50</p>
-      <button onclick="agregarAlCarrito('Galleta de Chocochip', 5.50)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/trufas.jpg" alt="Trufas">
-      <h3>Trufas</h3>
-      <p>S/2.50</p>
-      <button onclick="agregarAlCarrito('Trufas', 2.50)">Agregar al carrito</button>
-    </div>
-    <div class="producto">
-      <img src="img/Catálogo/Mousse_Limon.jpg" alt="Mousse de Limón">
-      <h3>Mousse de Limón</h3>
-      <p>S/13.00</p>
-      <button onclick="agregarAlCarrito('Mousse de Limón', 13.00)">Agregar al carrito</button>
-    </div>
-  </div>
-</section>
-
 <!-- Carrito -->
 <section class="carrito">
   <h2>Carrito</h2>

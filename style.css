@@ -114,9 +114,7 @@ header nav ul li a:hover{
 }
 
 main{
-    width: 100vw;
-    height: 100vh;
-    background-color: #eafdfc;
+    background-color: #fff5f8;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -126,7 +124,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: ;
     overflow: hidden;
 }
 
@@ -151,7 +149,7 @@ main{
 .img{
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.85);
     height: 576px;
-    width: 1134px;
+    width: 1130px;
     border-radius: 15px ;
     margin: 5px;
     object-fit: cover;
@@ -236,28 +234,14 @@ main{
 }
 
 .vista-previa img {
-    /* max-width: 100%; */
     border-radius: 10px;
 }
 
 /*Catalogo*/
-/*Carro*/
-.catalogo, .carrito {
-    padding: 2rem;
-    text-align: center;
-}
 
-.carrito {
-    background: #fff5f8;
-    margin-top: 2rem;
-    border-top: 2px dashed #ccc;
+.catalogo{
+    padding: 2rem
 }
-
-.carrito ul {
-    list-style: none;
-    padding: 0;
-}
-
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -313,6 +297,20 @@ main{
 
 .producto button:hover {
     background-color: #f68cef;
+}
+
+/*Carro*/
+
+.carrito {
+    padding: 1.3rem;
+    background: #fff5f8;
+    border-top: 2px dashed #ccc;
+    text-align: center;
+}
+
+.carrito ul {
+    list-style: none;
+    padding: 0;
 }
 
 /* Footer */
