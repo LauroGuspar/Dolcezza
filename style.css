@@ -17,16 +17,6 @@ header nav {
     position: relative;
 }
 
-h1{
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    font-weight: bold;
-    unicode-bidi: isolate;
-}
 header {
     background-color: #FFD9E0;
     font-family: "Comic Sans MS", serif;
@@ -34,9 +24,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: auto;
     z-index: 1;
-    padding: 10px 10px;
+    padding: 0px 10px;
     padding-right: 20px;
     justify-content: space-between;
     align-items: center;
@@ -45,21 +35,25 @@ header {
 
 /*Cabecera*/
 /*Logo*/
+
+.header_logo{
+    margin: 10px 0px;
+}
+
 .header_logo h1{
     margin-left: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     font-size: 2rem;
 }
 
 .header_logo img{
-    width: 60px;
-    height: auto;
+    width: auto;
+    height: 80px;
 }
 
 /* Menú Hamburguesa */
-
 header nav ul {
     width: 100%;
     backdrop-filter: blur(10px);
@@ -84,7 +78,6 @@ header nav ul li a:hover{
     display: flex;
     cursor: pointer;
     font-size: 30px;
-    /* margin-right: 0px; */
     margin-left: 105px; /* Mover hacia la izquierda */
     position: relative; /* Asegurar que no salga de la pantalla */
 }
@@ -94,7 +87,6 @@ header nav ul li a:hover{
     position: absolute;
     top: 100%; /* Aparece debajo del botÃ³n */
     width: 135px;
-    left: 0;
     list-style: none;
     padding: 10px 0;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -103,6 +95,10 @@ header nav ul li a:hover{
 
 .nav-list.active {
     display: block;
+}
+
+li#Carrito img {
+    width: 25px;
 }
 
 /* Cuerpo */
@@ -124,7 +120,6 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: ;
     overflow: hidden;
 }
 
@@ -136,22 +131,23 @@ main{
     justify-content: center;
     overflow: hidden;
     width: 100%;
-    height: 100vh;
+    height: 615px;
+    margin-bottom: 30px;
 }
 
-.imagenes{
+.img_carrusel{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: end;
+    margin-inline: 10px;
 }
 
-.img{
+.img_carrusel img{
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.85);
-    height: 576px;
-    width: 1130px;
-    border-radius: 15px ;
-    margin: 5px;
+    width:100%;
+    height: 36rem;
+    border-radius: 15px;
     object-fit: cover;
     filter: saturate(175%);
 }
@@ -186,20 +182,20 @@ main{
     font-weight: 300;
 }
 
-.imagenes .texto{
+.img_carrusel .texto{
     width: 600px;
     height: 100px;
     transition: 1s;
 }
 
-.imagenes:hover .texto{
+.img_carrusel:hover .texto{
     transition: height 1s, transform 1s, background-color 1s;
     transform: translateY(-150px);
     height: 300px;
     background-color: rgba(63, 106, 138, 0.71);
 }
 
-.imagenes:hover .texto p{
+.img_carrusel:hover .texto p{
     transition: font-size 0s .2s linear;
     font-size: 23px;
     font-weight: 300;
@@ -218,35 +214,41 @@ main{
 #puntos span {
     font-size: 24px;
     cursor: pointer;
-    color: #f7b2d9; /* rosado clarito */
+    color: #f7b2d9; 
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #puntos span.activo {
-    color: #ec5ca6; /* rosado fuerte */
+    color: #ec5ca6;
     transform: scale(1.4);
 }
-/*------------------------------------------------*/
-/*Logo previo al Catalogo*/
+
+/*-------Logo previo al Catalogo------*/
 .vista-previa {
-    margin-bottom: 3rem;
+    width:100%;
+    margin-top: 20px;
+    padding-inline: 300px;
     text-align: center;
 }
 
 .vista-previa img {
+    display:block;
+    width:100%;
+    height:auto;
     border-radius: 10px;
 }
 
-/*Catalogo*/
+/*------------- Catalogo-----------*/
 
 .catalogo{
-    padding: 2rem
+    padding: 2rem;
 }
+
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 .producto {
@@ -254,7 +256,7 @@ main{
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 200px;
+    width:100%;
 }
 
 .producto img {
@@ -277,20 +279,7 @@ main{
     border: none;
     padding: 0.5rem;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.producto button:hover {
-    background-color: #f68cef;
-}
-
-.producto button {
-    background-color: #d15b5b;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 5px;
+    align-content: baseline;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -344,96 +333,175 @@ footer img{
 }
 
 /*Responsivo*/
-@media screen and (min-width: 580px) {
-    .container{
-        padding:0 45px;
+@media screen and (max-width: 1280px){
+    
+    /*-------------------- CARRUSEL -------------------- */
+    .carrusel{
+        height: 595px;
+        margin-bottom: 30px;
+    }
+ 
+    .img_carrusel img{
+        height: 550px;
+    }
+
+    /*--------------------- Catalógo ----------------*/
+    .productos-grid {
+        padding: 20px 15px;
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .container{
-        padding:0 15px;
+@media screen and (max-width: 960px){
+
+    .header_logo h1{
+        margin-left:10px;
+    }
+
+    .vista-previa {
+    padding-inline: 260px;
+    }
+    
+    .productos-grid{
+        grid-template-columns: repeat(4, 1fr);
     }
 }
-@media screen and (max-width: 768px) {
 
-    header nav ul {
-        width: 100%;
-        backdrop-filter: blur(10px);
-        background-color: rgb(255, 217, 224,0.60);
-        text-align: unset;
-        border-radius: 10px;
+@media screen and (max-width: 860px) {
+
+    header{
+        height: 95px;
+    }
+    
+    .header_logo img{
+        width: 80px;
+    }
+    
+    .header_logo h1{
+        font-size: 30px;
     }
 
-    header nav ul li {
-        margin: 1px 0;
+    /*-------------------- CARRUSEL -------------------- */
+    .carrusel{
+        height:490px;
+    }
+    
+    .img_carrusel img{
+        height: 450px;
     }
 
-    header nav ul li a {
-        display: block;
+    .texto p{
+        align-items: center;
         padding: 10px;
     }
 
-    .header-middle-icon-item {
-        display: none;
+    .img_carrusel .texto{
+        width: 450px;
+        height: 70px;
     }
 
-    .nav-list #Carrito {
-        display: block;
+    .img_carrusel:hover .texto{
+        transform: translateY(30px);
+        height: 120px;
+        width: 450px;
     }
-
-    .header_logo h1{
-        margin-left: 0;
-        margin-right: 60px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 25px;
+    
+    /*--------------------- Prev-Catalógo(img) ----------------*/
+    .vista-previa {
+        padding-inline: 240px;
     }
-
-    header{
-        padding-left:15px;
-    }
-
-    .vista-previa img {
-        max-width: 200px;
-        border-radius: 10px;
-    }
-
+    
+    /*--------------------- Catalógo ----------------*/
     .productos-grid {
-        display: grid;
+        padding: 20px 05px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /*-------------------- CARRUSEL -------------------- */
+
+    .carrusel{
+        height: 500px;
+        margin-bottom: 25px;
+    }
+    
+    .img_carrusel img{
+        height: 450px;
+    }
+
+    .img_carrusel .texto{
+        width: 345px;
+        height: 75px;
+    }
+
+    .img_carrusel:hover .texto{
+        transform: translateY(10px);
+        height: 150px;
+    }
+    
+    /*--------------------- Prev-Catalógo(img) ----------------*/
+    .vista-previa {
+        padding-inline: 200px;
+    }
+    
+    /*--------------------- Catalógo ----------------*/
+    .productos-grid {
+        padding: 15px 0px;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
+    
     .header_logo h1{
-        margin-left: 0;
-        margin-right:15px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
+        margin-left: 0px;
+        font-size: 23px;
+    }
+
+    /*Menu-Hamburgueza*/
+
+    .menu-hamburguesa {
+        pointer-events:visible;
+        margin-left: 91px;
+    }
+
+    /*-------------------- CARRUSEL -------------------- */
+    .carrusel{
+        height: 385px;
+    }
+    .img_carrusel img{
+        height: 350px;
+    }
+
+    .img_carrusel .texto{
+        width: 265px;
+        height: 75px;
+    }
+
+    .img_carrusel:hover .texto{
+        transform: translateY(2px);
+        height: 140px;
+        width: 265px;
+    }
+
+    .img_carrusel:hover .texto p{
         font-size: 20px;
+        text-align: center;
     }
-    .header_logo{
-        margin-right: 10px;
-    }
-    header{
-        padding: 10px;
-    }
+    /*--------------------- Catalógo ----------------*/
 
-    .vista-previa img {
-        max-width: 400px;
-        border-radius: 10px;
-        margin-left:50px;
+    .vista-previa {
+    padding-inline: 60px;
     }
-
+    
     .productos-grid {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 20px;
+        padding: 10px 0px;
+    }
+}
+
+@media screen and (max-width:391px){
+    .header_logo h1{
+        font-size: 20px;
     }
 }

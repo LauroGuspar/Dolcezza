@@ -78,11 +78,11 @@ document.querySelectorAll("nav ul li").forEach(item => {
 });
 
 // ============================
-//        CAROUSEL
+//        CARUSEL
 // ============================
 let imagenes = [
     {
-        "url": "img/Carrusel/img1.jpg",
+        "url": "img/Carrusel/Brownie01.jpg",
         "nombre": "Brownie",
         "descripcion": "Un postre de chocolate húmedo"
 
