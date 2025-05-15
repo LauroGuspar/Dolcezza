@@ -21,13 +21,9 @@ header {
     background-color: #FFD9E0;
     font-family: "Comic Sans MS", serif;
     color: white;
-    top: 0;
-    left: 0;
     width: 100%;
     height: auto;
-    z-index: 1;
-    padding: 0px 10px;
-    padding-right: 20px;
+    padding: 10px 20px 0 10px;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -35,10 +31,6 @@ header {
 
 /*Cabecera*/
 /*Logo*/
-
-.header_logo{
-    margin: 10px 0px;
-}
 
 .header_logo h1{
     margin-left: 20px;
@@ -50,7 +42,7 @@ header {
 
 .header_logo img{
     width: auto;
-    height: 80px;
+    height: 70px;
 }
 
 /* Menú Hamburguesa */
@@ -78,14 +70,14 @@ header nav ul li a:hover{
     display: flex;
     cursor: pointer;
     font-size: 30px;
-    margin-left: 105px; /* Mover hacia la izquierda */
     position: relative; /* Asegurar que no salga de la pantalla */
 }
 
 .nav-list {
     display: none;
     position: absolute;
-    top: 100%; /* Aparece debajo del botÃ³n */
+    top: 100%;
+    right: 1%;
     width: 135px;
     list-style: none;
     padding: 10px 0;
@@ -146,6 +138,7 @@ main{
 .img_carrusel img{
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.85);
     width:100%;
+    max-width: 767px;
     height: 36rem;
     border-radius: 15px;
     object-fit: cover;
@@ -191,7 +184,7 @@ main{
 .img_carrusel:hover .texto{
     transition: height 1s, transform 1s, background-color 1s;
     transform: translateY(-150px);
-    height: 300px;
+    height: max-content;
     background-color: rgba(63, 106, 138, 0.71);
 }
 
@@ -200,6 +193,26 @@ main{
     font-size: 23px;
     font-weight: 300;
     text-shadow: 0 0 10px #000000;
+    text-align: center;
+}
+
+.atras, .adelante{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(124, 117, 117, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+.adelante{
+    right: 21%;
+}
+
+.atras{
+    left: 21%;
 }
 /*-----------------------------------------*/
 /*PuntosInteractivos-Carrusel*/
@@ -225,28 +238,28 @@ main{
 
 /*-------Logo previo al Catalogo------*/
 .vista-previa {
-    width:100%;
-    margin-top: 20px;
-    padding-inline: 300px;
-    text-align: center;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .vista-previa img {
     display:block;
-    width:100%;
+    width: 30%;
     height:auto;
     border-radius: 10px;
+    max-width: 500px;
 }
 
 /*------------- Catalogo-----------*/
 
 .catalogo{
+    width: 100%;
     padding: 2rem;
 }
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px 10px;
 }
@@ -257,20 +270,41 @@ main{
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width:100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
 }
 
 .producto img {
-    width: 100%;
+    width: 100% ;
+    height: 160px;
     border-radius: 8px;
 }
-
-.producto h3 {
-    margin: 0.5rem 0;
+.producto p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    padding: 5px;
 }
 
-.producto p {
-    font-weight: bold;
-    color: #b44e4e;
+.overlay-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.producto:hover .overlay-text {
+    opacity: 1;
 }
 
 .producto button {
@@ -282,14 +316,145 @@ main{
     align-content: baseline;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .producto button:hover {
     background-color: #f68cef;
 }
 
-/*Carro*/
+/* -------------------- MODAL -------------------- */
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Modal tiene un z-index alto para estar encima del header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+    animation: slide-down 0.5s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #fff;
+    width: 90%;
+    max-width: 730px;
+    border-radius: 10px;
+    color: #000;
+    position: relative;
+    overflow: auto;
+    max-height: 90vh;
+    text-align: center; /* Alinea todo el contenido al centro */
+    animation: fadeIn 0.5s ease-out; /* Animación para el contenido */
+}
+
+/* Asegurarse de que el título esté centrado */
+.modal-content h2 {
+    margin: 0; /* Elimina márgenes innecesarios */
+    font-size: 1.5em; /* Ajusta el tamaño del título si es necesario */
+    
+}
+
+.close-btn {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    
+    
+}
+
+.modal-body img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+    
+}
+
+.modal-buttons{
+    display:flex;
+    align-items: center;
+    margin-top: 15px;
+    gap:15px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.description {
+    color:black;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 1px solid #555;
+    line-height: 1.6;
+    word-wrap: break-word;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.btn-details, .btn-car {
+    padding: 10px 20px;
+    background-color: #484b4e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-car {
+    text-decoration: none;
+}
+
+.btn-details:hover, .btn-car:hover {
+    background-color: #9ca0a3;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/*Carro*/
 .carrito {
     padding: 1.3rem;
     background: #fff5f8;
@@ -311,10 +476,15 @@ footer {
     width: 100%;
 }
 
+footer p{
+    padding: 4px;
+}
+
 footer a {
     color: gray;
     text-decoration: none;
     margin: 0 10px;
+    padding: 4px
 }
 
 footer a:hover {
@@ -344,29 +514,9 @@ footer img{
     .img_carrusel img{
         height: 550px;
     }
-
-    /*--------------------- Catalógo ----------------*/
-    .productos-grid {
-        padding: 20px 15px;
-    }
 }
 
-@media screen and (max-width: 960px){
-
-    .header_logo h1{
-        margin-left:10px;
-    }
-
-    .vista-previa {
-    padding-inline: 260px;
-    }
-    
-    .productos-grid{
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 896px) {
 
     header{
         height: 95px;
@@ -390,29 +540,11 @@ footer img{
     }
 
     .texto p{
-        align-items: center;
         padding: 10px;
     }
 
     .img_carrusel .texto{
-        width: 450px;
-        height: 70px;
-    }
-
-    .img_carrusel:hover .texto{
-        transform: translateY(30px);
-        height: 120px;
-        width: 450px;
-    }
-    
-    /*--------------------- Prev-Catalógo(img) ----------------*/
-    .vista-previa {
-        padding-inline: 240px;
-    }
-    
-    /*--------------------- Catalógo ----------------*/
-    .productos-grid {
-        padding: 20px 05px;
+        height: 75px;
     }
 }
 
@@ -430,25 +562,68 @@ footer img{
     }
 
     .img_carrusel .texto{
-        width: 345px;
+        width: calc(100% - 5rem);
         height: 75px;
     }
 
     .img_carrusel:hover .texto{
+        width: calc(100% - 5rem);
         transform: translateY(10px);
-        height: 150px;
-    }
-    
-    /*--------------------- Prev-Catalógo(img) ----------------*/
-    .vista-previa {
-        padding-inline: 200px;
     }
     
     /*--------------------- Catalógo ----------------*/
     .productos-grid {
         padding: 15px 0px;
-        grid-template-columns: repeat(3, 1fr);
     }
+
+    /*Modal*/
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-body img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .info-container {
+        padding: 10px;
+    }
+
+    .description {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .btn-details {
+        margin: 10px auto 0 auto;
+    }
+
+    .modal-content .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-content .close:hover {
+        color: #f00;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -461,7 +636,6 @@ footer img{
     /*Menu-Hamburgueza*/
 
     .menu-hamburguesa {
-        pointer-events:visible;
         margin-left: 91px;
     }
 
@@ -474,14 +648,11 @@ footer img{
     }
 
     .img_carrusel .texto{
-        width: 265px;
         height: 75px;
     }
 
     .img_carrusel:hover .texto{
         transform: translateY(2px);
-        height: 140px;
-        width: 265px;
     }
 
     .img_carrusel:hover .texto p{
@@ -489,19 +660,8 @@ footer img{
         text-align: center;
     }
     /*--------------------- Catalógo ----------------*/
-
-    .vista-previa {
-    padding-inline: 60px;
-    }
     
     .productos-grid {
-        grid-template-columns: repeat(2, 1fr);
         padding: 10px 0px;
-    }
-}
-
-@media screen and (max-width:391px){
-    .header_logo h1{
-        font-size: 20px;
     }
 }

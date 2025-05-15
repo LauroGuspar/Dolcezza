@@ -23,66 +23,11 @@ menuToggle.addEventListener("click", (e) => {
 });
 
 // ============================
-//        MENÚ DESPLEGABLE
-// ============================
-
-function toggleSubmenu(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    const parentLi = event.currentTarget.parentElement;
-
-    document.querySelectorAll('.has-submenu').forEach(item => {
-        if (item !== parentLi) {
-            item.classList.remove('open');
-        }
-    });
-
-    parentLi.classList.toggle('open');
-}
-
-document.querySelectorAll('.has-submenu > a').forEach(link => {
-    link.addEventListener('click', toggleSubmenu);
-});
-
-document.addEventListener('click', function (event) {
-    const isSubmenu = event.target.closest('.has-submenu');
-    const isLoginForm = event.target.closest('#login-form');
-    const isLoginButton = event.target.closest('#login-btn');
-
-    if (!isSubmenu && !isLoginForm && !isLoginButton) {
-        document.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('open'));
-        document.getElementById('login-form').style.display = 'none';
-    }
-});
-
-// ============================
-//        MENÚ HAMBURGUESA
-// ============================
-const menuHamburguesa = document.querySelector('.menu-hamburguesa');
-
-if (menuHamburguesa) {
-    menuHamburguesa.addEventListener('click', () => {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('open');
-    });
-}
-
-document.querySelectorAll("nav ul li").forEach(item => {
-    item.addEventListener("click", () => {
-        const submenu = item.querySelector(".submenu");
-        if (submenu) {
-            submenu.classList.toggle("open");
-        }
-    });
-});
-
-// ============================
 //        CARUSEL
 // ============================
 let imagenes = [
     {
-        "url": "img/Carrusel/Brownie01.jpg",
+        "url": "img/Carrusel/img1.jpg",
         "nombre": "Brownie",
         "descripcion": "Un postre de chocolate húmedo"
 
@@ -97,6 +42,18 @@ let imagenes = [
         "url": "img/Carrusel/img3.jpg",
         "nombre": " Cheesecake de Maracuyá",
         "descripcion": "Para aquellos que les encanta el cítrico"
+
+    },
+    {
+        "url": "img/Carrusel/img4.jpg",
+        "nombre": " Crema Volteada",
+        "descripcion": " Postre popular en Perú y Latinoamérica, similar al flan español y al crème caramel francés."
+
+    },
+    {
+        "url": "img/Carrusel/img5.jpg",
+        "nombre": "Torta de Tres Leches",
+        "descripcion": "Un postre tradicional de la cocina latinoamericana, especialmente popular en México y América Central."
 
     },
 ]
@@ -183,3 +140,51 @@ function actualizarCarrito() {
 
     totalTexto.textContent = total.toFixed(2);
 }
+
+// ============================
+//             MODAL
+// ============================
+
+const producto = document.querySelectorAll(".producto");
+
+function abrirModal(imageData) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalButton = document.getElementById("modal-button-details");
+    const modalDescription = document.getElementById("modal-description");
+    const modalTitle = document.getElementById("modal-title");
+
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+
+    modalImage.src = imageData.src;
+    modalDescription.textContent = imageData.dataset.description;
+    modalButton.href = imageData.dataset.detailsLink;
+    modalTitle.textContent = imageData.dataset.title;
+}
+
+function cerrarModal() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+}
+
+producto.forEach(card => {
+    card.addEventListener('click', () => {
+        const image = card.querySelector(".Catalg_img");
+        if (image) abrirModal(image);
+    });
+});
+
+document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener('click', cerrarModal);
+});
+
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) cerrarModal();
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") cerrarModal();
+});

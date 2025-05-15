@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolcezza -  Reposteria</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
@@ -15,7 +14,7 @@
   <!-- Logo -->
   <div class="header_logo">
     <h1>
-      <img src="img/dolcezza.png" alt>
+      <a href="index.html"><img src="img/dolcezza.png" alt="logo"></a>
       Dolcezza Fresh Cooking
     </h1>
   </div>
@@ -27,18 +26,18 @@
       </div>
       <ul class="nav-list" id="nav-list">
         <!-------------- Carrito ------------------>
+        <li><a href="index.html">Inicio</a></li>
         <li id="Carrito">
-          <a href="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="img/carrito.png" alt>
+          <a href="Carrito.html" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="img/carrito.png">
             <span>0 item(s)</span>
           </a>
         </li>
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/Postres/Postres.html">Postres</a></li>
-        <li><a href="/Postres/Salados.html">Salados</a></li>
-        <li><a href="/Postres/Chocolateria.html">Chocolateria</a></li>
-        <li><a href="/Postres/Dulces.html">Dulces</a></li>
-        <li><a href="/Postres/Contacto.html">Contacto</a></li>
+        <li><a href="Postres/General.html">Postres</a></li>
+        <li><a href="Postres/Salados.html">Salados</a></li>
+        <li><a href="Postres/Chocolateria.html">Chocolateria</a></li>
+        <li><a href="Postres/Dulces.html">Dulces</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -47,12 +46,12 @@
 <main class="main">
     <div class="carrusel">
       <div class="atras">
-          <img id="atras" src="img/atras.svg" alt="atras" loading="lazy">
+          <img id="atras" src="img/atras.png" alt="atras" loading="lazy">
       </div>
 
       <div class="img_carrusel" id="img_carrusel">
           <div id="img">
-              <img src="img/Carrusel/Brownie01.jpg" alt="imagen 1" loading="lazy">
+              <img src="img/Carrusel/img1.jpg" alt="imagen 1" loading="lazy">
           </div>
           
           <div id="texto" class="texto">
@@ -63,14 +62,16 @@
       </div>
 
       <div class="adelante" id="adelante">
-          <img src="img/adelante.svg" alt="adelante" loading="lazy">
+          <img src="img/adelante.png" alt="adelante" loading="lazy">
       </div>
     </div>
-    <div class="#puntos" id="puntos">●</div> 
+    <div class="puntos" id="puntos">●</div> 
 
   <!-- Vista previa -->
   <section class="vista-previa">
-    <img src="img/dolcezza.png" alt="Banner de postres">
+    <div style="text-align: -webkit-center;">
+      <img src="img/dolcezza.png" alt="Banner de postres">
+    </div>
   </section>
 
   <!-- Catálogo -->
@@ -78,89 +79,91 @@
     <h2>Nuestros Productos</h2>
     <div class="productos-grid">
       <div class="producto">
-        <img src="img/Catálogo/Tortal_Chocolate.jpg" alt="Torta de Chocolate">
-        <h3>Torta de Chocolate</h3>
-        <p>S/15.00</p>
-        <button onclick="agregarAlCarrito('Torta de Chocolate', 15)">Agregar al carrito</button>
+        <img src="img/Catálogo/Tortal_Chocolate.jpg" class="Catalg_img" data-title="Tortal Chocolate" alt="Torta de Chocolate" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Torta de Chocolate</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cupcake de Fresa">
-        <h3>Cheesecake de Fresa</h3>
-        <p>S/15.00</p>
-        <button onclick="agregarAlCarrito('Cheesecake de Fresa', 15.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Cheesecake_Fresa.webp" class="Catalg_img" data-title="Cheesecake Fresa" alt="Cupcake de Fresa" data-description="Agregar una description" data details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Cheesecake de Fresa</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Chocotejas.webp" alt="Chocotejas artesanales">
-        <h3>Chocotejas artesanales</h3>
-        <p>S/3.50</p>
-        <button onclick="agregarAlCarrito('Chocotejas artesanales', 3.5)">Agregar al carrito</button>
+        <img src="img/Catálogo/Chocotejas.webp" class="Catalg_img" data-title="Chocotejas" alt="Chocotejas artesanales" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Chocotejas artesanales</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Pastel_Blanco.jpg" alt="Pastel Blanco">
-        <h3>Pastel Blanco</h3>
-        <p>S/10.00</p>
-        <button onclick="agregarAlCarrito('Pastel Blanco', 10.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Pastel_Blanco.jpg" class="Catalg_img" data-title="Pastel_Blanco" alt="Pastel Blanco" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Pastel Blanco</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Cheesecake de Maracuyá">
-        <h3>Cheesecake de Maracuyá</h3>
-        <p>S/15.00</p>
-        <button onclick="agregarAlCarrito('Cheesecake de Maracuyá', 15.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" class="Catalg_img" data-title="Cheesecake_Maracuyá" alt="Cheesecake de Maracuyá" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Cheesecake de Maracuyá</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Brownie.jpg" alt="Brownie">
-        <h3>Brownie</h3>
-        <p>S/10.00</p>
-        <button onclick="agregarAlCarrito('Brownie', 10.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Brownie.jpg" class="Catalg_img" data-title="Brownie" alt="Brownie" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Brownie</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Macarrones.jpeg" alt="Macarrones">
-        <h3>Macarrones</h3>
-        <p>S/10.00</p>
-        <button onclick="agregarAlCarrito('Macarrones', 10.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Macarrones.jpeg" class="Catalg_img" data-title="Macarrones" alt="Macarrones" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Macarrones</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Chocochip.jpg" alt="Galleta de Chocochip">
-        <h3>Galleta de Chocochip</h3>
-        <p>S/5.50</p>
-        <button onclick="agregarAlCarrito('Galleta de Chocochip', 5.50)">Agregar al carrito</button>
+        <img src="img/Catálogo/Chocochip.jpg" class="Catalg_img" data-title="Chocochip" alt="Galleta de Chocochip" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Galleta de Chocochip</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/trufas.jpg" alt="Trufas">
-        <h3>Trufas</h3>
-        <p>S/2.50</p>
-        <button onclick="agregarAlCarrito('Trufas', 2.50)">Agregar al carrito</button>
+        <img src="img/Catálogo/trufas.jpg" class="Catalg_img" data-title="Trufas" alt="Trufas" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Trufas</div>
       </div>
       <div class="producto">
-        <img src="img/Catálogo/Mousse_Limon.jpg" alt="Mousse de Limón">
-        <h3>Mousse de Limón</h3>
-        <p>S/13.00</p>
-        <button onclick="agregarAlCarrito('Mousse de Limón', 13.00)">Agregar al carrito</button>
+        <img src="img/Catálogo/Mousse_Limon.jpg" class="Catalg_img" data-title="Mousse_Limon" alt="Mousse de Limón" data-description="Agregar una description" data-details-lik="Ingrese un link">
+        <p>S/0.00</p>
+        <div class="overlay-text">Mousse de Limón</div>
       </div>
     </div>
   </section>
-
 </main>
-<!-- Carrito -->
-<section class="carrito">
-  <h2>Carrito</h2>
-  <ul id="lista-carrito"></ul>
-  <p>Total: S/<span id="total-carrito">0.00</span></p>
-</section>
-
 
 <!-- Footer -->
 <footer>
   <p>@Dolcezza. Todos los derechos reservados.</p>
   <a href="#">
-    <img src="img/ws.png" alt>
+    <img src="img/ws.png" alt="WhatsApp">
     <span>945027855</span>
   </a> |
   <a href="#">
-    <img src="img/mail.png" alt>
+    <img src="img/mail.png" alt="Email">
     <span> info@dolcezza.com.pe</span>
   </a>
 </footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">×</span>
+    <h3 id="modal-title"></h3>
+    <div class="modal-body">
+      <img src="" alt="Imagen Modal" id="modal-image">
+      <div class="info-container"> 
+        <div class="description">
+          <p id="modal-description"></p>
+        </div>
+        <div class="modal-buttons">
+          <a href="#" class="btn-car" id="modal-button-car">Añadir al carrito</a>
+          <a href="#" class="btn-details" id="modal-button-details">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
 <script src="script.js"></script>
