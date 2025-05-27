@@ -1,172 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dolcezza -  Reposteria</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dolcezza Fresh Cooking</title>
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
-
 <body>
-<!-- Cabecera -->
-<header class="header">
-  <!-- Logo -->
-  <div class="header_logo">
-    <h1>
-      <a href="index.html"><img src="img/dolcezza.png" alt="logo"></a>
-      Dolcezza Fresh Cooking
-    </h1>
-  </div>
 
-  <div class="header_right header-middle-icon">
-    <nav>
-      <div class="menu-hamburguesa" id="menu-toggle">
-        <span>&#9776;</span>
-      </div>
-      <ul class="nav-list" id="nav-list">
-        <!-------------- Carrito ------------------>
-        <li><a href="index.html">Inicio</a></li>
-        <li id="Carrito">
-          <a href="Carrito.html" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="img/carrito.png">
-            <span>0 item(s)</span>
-          </a>
-        </li>
-        <li><a href="Postres/General.html">Postres</a></li>
-        <li><a href="Postres/Salados.html">Salados</a></li>
-        <li><a href="Postres/Chocolateria.html">Chocolateria</a></li>
-        <li><a href="Postres/Dulces.html">Dulces</a></li>
-        <li><a href="Contacto.html">Contacto</a></li>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
+      <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
+    </div>
+    <nav class="nav-bar">
+  <ul class="menu-principal">
+    <li><a href="index.html">Inicio</a></li>
+    
+    <li class="menu-productos">
+      <input type="checkbox" id="toggle-productos">
+      <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+      <ul class="submenu">
+         <li><a href="../Dolcezza/Postres/General.html">General</a></li>
+        <li><a href="../Dolcezza/Postres/Chocolateria.html">Chocolatería</a></li>
+        <li><a href="../Dolcezza/Postres/Dulces.html">Dulces</a></li>
+        <li><a href="../Dolcezza/Postres/Salados.html">Salados</a></li>
       </ul>
-    </nav>
-  </div>
-</header>
-<!-- Cuerpo -->
-<main class="main">
-    <div class="carrusel">
-      <div class="atras">
-          <img id="atras" src="img/atras.png" alt="atras" loading="lazy">
-      </div>
-
-      <div class="img_carrusel" id="img_carrusel">
-          <div id="img">
-              <img src="img/Carrusel/img1.jpg" alt="imagen 1" loading="lazy">
-          </div>
-          
-          <div id="texto" class="texto">
-              <h3>Brownie</h3>
-              <p>Un postre de chocolate húmedo</p>
-          </div>
-
-      </div>
-
-      <div class="adelante" id="adelante">
-          <img src="img/adelante.png" alt="adelante" loading="lazy">
-      </div>
+    </li>
+    
+    <li><a href="Contacto.html">Contacto</a></li>
+    
+    <div>
+      <a href="Carrito.html" class="cart-icon">
+  <img src="img/car.png" alt="Carrito" class="icon-small" />
+</a>
     </div>
-    <div class="puntos" id="puntos">●</div> 
+  </ul>
+</nav>
 
-  <!-- Vista previa -->
-  <section class="vista-previa">
-    <div style="text-align: -webkit-center;">
-      <img src="img/dolcezza.png" alt="Banner de postres">
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Imagen principal" />
+    <h1>Bienvenidos a Dolcezza</h1>
+    <p>Delicias artesanales hechas con amor</p>
+    <a href="../Dolcezza/Postres/General.html" class="boton">Ver Productos</a>
+  </section>
+
+  <!-- Categorías -->
+  <section class="categorias">
+    <h2>Categorías</h2>
+    <div class="categoria-lista">
+      <div class="categoria-img">
+        <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Postres" />
+        <a href="../Dolcezza/Postres/Dulces.html" class="boton">Postres Dulces</a>
+      </div>
+      <div class="categoria-img">
+        <img src="img/Catálogo/Chocotejas.webp" alt="Chocolates" />
+        <a href="../Dolcezza/Postres/Chocolateria.html" class="boton">Chocolateria</a>
+      </div>
+       <div class="categoria-img">
+        <img src="img/cheesecake-salado.jpg" alt="Postres Salados" />
+        <a href="../Dolcezza/Postres/Salados.html" class="boton">Postres Salados</a>
+      </div>
     </div>
   </section>
 
-  <!-- Catálogo -->
-  <section class="catalogo">
-    <h2>Nuestros Productos</h2>
-    <div class="productos-grid">
-      <div class="producto">
-        <img src="img/Catálogo/Tortal_Chocolate.jpg" class="Catalg_img" data-title="Tortal Chocolate" alt="Torta de Chocolate" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Torta de Chocolate</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Cheesecake_Fresa.webp" class="Catalg_img" data-title="Cheesecake Fresa" alt="Cupcake de Fresa" data-description="Agregar una description" data details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Cheesecake de Fresa</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Chocotejas.webp" class="Catalg_img" data-title="Chocotejas" alt="Chocotejas artesanales" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Chocotejas artesanales</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Pastel_Blanco.jpg" class="Catalg_img" data-title="Pastel_Blanco" alt="Pastel Blanco" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Pastel Blanco</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" class="Catalg_img" data-title="Cheesecake_Maracuyá" alt="Cheesecake de Maracuyá" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Cheesecake de Maracuyá</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Brownie.jpg" class="Catalg_img" data-title="Brownie" alt="Brownie" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Brownie</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Macarrones.jpeg" class="Catalg_img" data-title="Macarrones" alt="Macarrones" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Macarrones</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Chocochip.jpg" class="Catalg_img" data-title="Chocochip" alt="Galleta de Chocochip" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Galleta de Chocochip</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/trufas.jpg" class="Catalg_img" data-title="Trufas" alt="Trufas" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Trufas</div>
-      </div>
-      <div class="producto">
-        <img src="img/Catálogo/Mousse_Limon.jpg" class="Catalg_img" data-title="Mousse_Limon" alt="Mousse de Limón" data-description="Agregar una description" data-details-lik="Ingrese un link">
-        <p>S/0.00</p>
-        <div class="overlay-text">Mousse de Limón</div>
-      </div>
+  <!-- Productos -->
+  <section class="productos">
+  <h2>Destacados</h2>
+  <div class="producto-lista">
+    <div class="producto-img">
+      <img src="img/Catálogo/Brownie.jpg" alt="Brownie" />
+      <p>S/10.00</p>
+      <p>Brownie</p>
+    <button class="boton">Agregar al carrito</button>
+      
     </div>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer>
-  <p>@Dolcezza. Todos los derechos reservados.</p>
-  <a href="#">
-    <img src="img/ws.png" alt="WhatsApp">
-    <span>945027855</span>
-  </a> |
-  <a href="#">
-    <img src="img/mail.png" alt="Email">
-    <span> info@dolcezza.com.pe</span>
-  </a>
-</footer>
-
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">×</span>
-    <h3 id="modal-title"></h3>
-    <div class="modal-body">
-      <img src="" alt="Imagen Modal" id="modal-image">
-      <div class="info-container"> 
-        <div class="description">
-          <p id="modal-description"></p>
-        </div>
-        <div class="modal-buttons">
-          <a href="#" class="btn-car" id="modal-button-car">Añadir al carrito</a>
-          <a href="#" class="btn-details" id="modal-button-details">Ver detalles</a>
-        </div>
-      </div>
+    <div class="producto-img">
+      <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cheesecake de Fresa" />
+      <p>S/15.00</p>
+      <p>Cheesecake de Fresa</p>
+      <button class="boton">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Cheesecake de Maracuyá" />
+        <p>S/15.00</p>
+        <p>Cheesecake de Maracuyá</p>
+        <button class="boton">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="img/Catálogo/Chocochip.jpg" alt="Galletas Chocochip" />
+      <p>S/5.00</p>
+      <p>Galletas de Chocochip</p>
+      <button class="boton">Agregar al carrito</button>
+     
     </div>
   </div>
+</section>
+
+
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logo y descripción -->
+   <div class="footer-section center">
+  <img src="../Dolcezza/img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+  <h3>Dolcezza</h3>
+  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-<script src="script.js"></script>
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-section">
+      <h4>Enlaces Rápidos</h4>
+      <ul>
+        <li><a href="../Dolcezza/index.html">Inicio</a></li>
+        <li><a href="../Dolcezza/Postres/General.html">Postres</a></li>
+        <li><a href="../Dolcezza/Postres/Chocolateria.html">Chocolatería</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="footer-section">
+      <h4>Contáctanos</h4>
+      <p>
+        <a href="https://wa.me/51945027855" target="_blank">
+          <img src="img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+        </a>
+       </p>
+       <p> 
+        <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+          <img src="img/instagram.svg" alt="Instagram" /> <span>Dolcezza.freshcooking</span>
+        </a>
+      </p>
+      <p>📍 Chiclayo, Perú</p>
+    </div>
+    <!---Métodos de Pago -->
+    <div class="footer-section">
+        <h4>Métodos de Pago</h4>
+        <p>
+        <img src="img/VISA.png" alt="Visa"/><span>Visa</span>
+        </p>
+        <p>
+        <img src="img/MarterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </p>
+        <p>
+        <img src="img/YAPE.png" alt="Yape"/><span>yape</span>
+        </p>
+      </div>
+  </div>
+
+  <!-- Créditos -->
+  <div class="footer-bottom">
+    <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script>
+function agregarAlCarrito(nombre, precio) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito.push({ nombre, precio });
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  alert(nombre + " se agregó al carrito");
+}
+</script>
 
 </body>
 </html>

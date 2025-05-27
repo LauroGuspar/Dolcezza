@@ -2,65 +2,129 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dolcezza -  Carro</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+  <title>Dolcezza - General</title>
   <link rel="stylesheet" href="CSS/style.css">
 </head>
-
 <body>
-<!-- Cabecera -->
-<header class="header">
-  <!-- Logo -->
-  <div class="header_logo">
-    <h1>
-      <img src="img/dolcezza.png" alt>
-      Dolcezza Fresh Cooking
-    </h1>
+
+  <header>
+    <div class="logo-container">
+      <img src="img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
+      <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
+    </div>
+    <nav class="nav-bar">
+  <ul class="menu-principal">
+    <li><a href="index.html">Inicio</a></li>
+    
+    <li class="menu-productos">
+      <input type="checkbox" id="toggle-productos">
+      <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+      <ul class="submenu">
+         <li><a href="../Dolcezza/Postres/General.html">General</a></li>
+        <li><a href="../Dolcezza/Postres/Chocolateria.html">Chocolatería</a></li>
+        <li><a href="../Dolcezza/Postres/Dulces.html">Dulces</a></li>
+        <li><a href="../Dolcezza/Postres/Salados.html">Salados</a></li>
+      </ul>
+    </li>
+     <li><a href="Contacto.html">Contacto</a></li>
+    <div>
+    
+  </header>
+   <!-- CONTENIDO-CARRITO -->
+<h2>Mis compras </h2>
+<div id="carrito-contenido"></div>
+<p>Total: S/<span id="total">0.00</span></p>
+<button onclick="vaciarCarrito()" class="boton">Vaciar carrito</button>
+
+<!--Metodos de Pagos-->
+<section class="metodo-pago">
+  <h2>Elige tu método de pago</h2>
+
+  <div class="opciones-pago">
+    <label class="opcion">
+      <input type="radio" name="pago" value="tarjeta">
+      <img src="img/VISA.png" alt="Visa">
+      <img src="img/MarterCard.png" alt="MarterCard">
+      <span>Tarjeta (Visa / Mastercard)</span>
+    </label>
+
+    <label class="opcion">
+      <input type="radio" name="pago" value="yape">
+      <img src="img/YAPE.png" alt="Yape">
+      <p>
+      <span>Yape</span>
+      </p>
+    </label>
   </div>
 
-  <div class="header_right header-middle-icon">
-    <nav>
-      <div class="menu-hamburguesa" id="menu-toggle">
-        <span>&#9776;</span>
+  <button onclick="pagar()" class="boton-pago">Ir a pagar</button>
+</section>
+
+
+  
+ <!-- Parte final -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section center">
+        <img src="img/dolcezza.png" alt="Logo" class="footer-logo-grande">
       </div>
-      <ul class="nav-list" id="nav-list">
-        <!-------------- Carrito ------------------>
-        <li><a href="index.html">Inicio</a></li>
-        <li id="Carrito">
-          <a href="Carrito.html" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="img/carrito.png" alt>
-            <span>0 item(s)</span>
-          </a>
-        </li>
-        <li><a href="Postres/General.html">Postres</a></li>
-        <li><a href="Postres/Salados.html">Salados</a></li>
-        <li><a href="Postres/Chocolateria.html">Chocolateria</a></li>
-        <li><a href="Postres/Dulces.html">Dulces</a></li>
+      <div class="footer-section">
+      <h4>Enlaces Rápidos</h4>
+      <ul>
+        <li><a href="../Dolcezza/index.html">Inicio</a></li>
+        <li><a href="../Dolcezza/Postres/General.html">Postres</a></li>
+        <li><a href="../Dolcezza/Postres/Chocolateria.html">Chocolatería</a></li>
         <li><a href="Contacto.html">Contacto</a></li>
       </ul>
-    </nav>
-  </div>
-</header>
+    </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/dolcezza.freshcooking"><img src="img/instagram.svg" alt="Instagram">Dolcezza.freshcooking</a></li>
+          <li><a href="https://wa.me/51999999999"><img src="img/ws.png" alt="WhatsApp">WhatsApp</a></li>
+          <p>📍 Chiclayo, Perú</p>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Métodos de Pago</h4>
+        <img src="img/VISA.png" alt="Visa"/><span>Visa</span>
+        <img src="img/MarterCard.png" alt="Mastercard"><span>Mastercard</span>
+        <img src="img/YAPE.png" alt="Yape"/><span>Yape</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Dolcezza Fresh Cooking
+    </div>
+  </footer>
 
 
+<script>
+function mostrarCarrito() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const contenedor = document.getElementById("carrito-contenido");
+  const totalElemento = document.getElementById("total");
 
-<!-- Footer -->
-<footer>
-  <p>@Dolcezza. Todos los derechos reservados.</p>
-  <a href="#">
-    <img src="img/ws.png" alt="WhatsApp_img">
-    <span>945027855</span>
-  </a> |
-  <a href="#">
-    <img src="img/mail.png" alt="Mail_img">
-    <span> info@dolcezza.com.pe</span>
-  </a>
-</footer>
+  contenedor.innerHTML = "";
+  let total = 0;
 
-<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-<script src="script.js"></script>
+  carrito.forEach(producto => {
+    const item = document.createElement("p");
+    item.textContent = `${producto.nombre} - S/${producto.precio.toFixed(2)}`;
+    contenedor.appendChild(item);
+    total += producto.precio;
+  });
+
+  totalElemento.textContent = total.toFixed(2);
+}
+
+function vaciarCarrito() {
+  localStorage.removeItem("carrito");
+  mostrarCarrito();
+}
+
+mostrarCarrito();
+</script>
 
 </body>
 </html>
