@@ -16,30 +16,34 @@
       </a>
       <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
     </div>
-    <nav class="nav-bar">
-  <ul class="menu-principal">
-    <li><a href="index.html">Inicio</a></li>
-    
-    <li class="menu-productos">
-      <input type="checkbox" id="toggle-productos">
-      <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
-      <ul class="submenu">
-         <li><a href="Postres/General.html">General</a></li>
-        <li><a href="Postres/Chocolateria.html">Chocolatería</a></li>
-        <li><a href="Postres/Dulces.html">Dulces</a></li>
-        <li><a href="Postres/Salados.html">Salados</a></li>
+    <nav class="nav" id="nav">
+      <ul class="menu-principal">
+        <li><a href="index.html">Inicio</a></li>
+      
+        <li class="menu-productos">
+          <input type="checkbox" id="toggle-productos">
+          <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+          <ul class="submenu">
+            <li><a href="Postres/General.html">General</a></li>
+            <li><a href="Postres/Chocolateria.html">Chocolatería</a></li>
+            <li><a href="Postres/Dulces.html">Dulces</a></li>
+            <li><a href="Postres/Salados.html">Salados</a></li>
+          </ul>
+        </li>
+      
+        <li><a href="Contacto.html">Contacto</a></li>
+        <div>
+          <a href="Carrito.html" class="cart-icon">
+            <img src="img/car.png" alt="Carrito" class="icon-small" />
+          </a>
+        </div>
       </ul>
-    </li>
-    
-    <li><a href="Contacto.html">Contacto</a></li>
-    <div>
-      <a href="Carrito.html" class="cart-icon">
-        <img src="img/car.png" alt="Carrito" class="icon-small" />
-      </a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </ul>
-</nav>
-
   </header>
 
   <!-- Hero -->
@@ -77,27 +81,28 @@
       <img src="img/Catálogo/Brownie.jpg" alt="Brownie" />
       <p>S/10.00</p>
       <p>Brownie</p>
-    <button class="boton">Agregar al carrito</button>
+    <button class="boton agregar-carrito" data-nombre="Brownie" data-precio="10" data-img="img/Catálogo/Brownie.jpg">Agregar al carrito</button>
+
       
     </div>
     <div class="producto-img">
       <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cheesecake de Fresa" />
       <p>S/15.00</p>
       <p>Cheesecake de Fresa</p>
-      <button class="boton">Agregar al carrito</button>
+      <button class="boton agregar-carrito" data-nombre="Cheesecake de Fresa" data-precio="15" data-img="img/Catálogo/Cheesecake_Fresa.webp">Agregar al carrito</button>
     </div>
     <div class="producto-img">
       <img src="img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Cheesecake de Maracuyá" />
         <p>S/15.00</p>
         <p>Cheesecake de Maracuyá</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Cheesecake de Maracuyá" data-precio="15" data-img="img/Catálogo/Cheesecake_Maracuyá.jpg">Agregar al carrito</button>
     </div>
     <div class="producto-img">
       <img src="img/Catálogo/Chocochip.jpg" alt="Galletas Chocochip" />
       <p>S/5.00</p>
       <p>Galletas de Chocochip</p>
-      <button class="boton">Agregar al carrito</button>
-     
+      <button class="boton agregar-carrito" data-nombre="Galletas de Chocochip" data-precio="5" data-img="img/Catálogo/Chocochip.jpg">Agregar al carrito</button>
+
     </div>
   </div>
 </section>
@@ -144,13 +149,13 @@
     <div class="footer-section">
         <h4>Métodos de Pago</h4>
         <p>
-        <img src="img/VISA.png" alt="Visa"/><span>Visa</span>
+        <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
         </p>
         <p>
-        <img src="img/MarterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
         </p>
         <p>
-        <img src="img/YAPE.png" alt="Yape"/><span>yape</span>
+        <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>yape</span>
         </p>
       </div>
   </div>
@@ -160,6 +165,7 @@
     <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
   </div>
 </footer>
+<script src="JS/script.js"></script>
 <script>
 function agregarAlCarrito(nombre, precio) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];

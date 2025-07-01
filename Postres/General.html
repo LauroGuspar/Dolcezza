@@ -15,7 +15,7 @@
     </a>  
     <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
   </div>
-  <nav class="nav-bar">
+  <nav class="nav" id="nav">
     <ul class="menu-principal">
       <li><a href="../index.html">Inicio</a></li>  
       <li class="menu-productos">
@@ -35,8 +35,12 @@
       </div>
     </ul>
   </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>
-
   <main class="productos">
     <h2>Nuestros Productos - General</h2>
     <div class="producto-lista">
@@ -45,96 +49,117 @@
         <img src="../img/Catálogo/Brownie.jpg" alt="Producto 1">
         <p>Brownie</p>
         <p>S/10.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Brownie" data-precio="10" data-img="img/Catálogo/Brownie.jpg">Agregar al carrito</button>
       </div>
       <div class="producto-img">
         <img src="../img/Catálogo/Cheesecake_Fresa.webp" alt="Producto 2">
         <p>Cheesecake de Fresa</p>
         <p>S/15.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Cheesecake de Fresa" data-precio="15" data-img="img/Catálogo/Cheesecake_Fresa.webp">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Cheesecake_Maracuyá.jpg" alt="Producto 2">
         <p>Cheesecake de Maracuyá</p>
         <p>S/15.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Cheesecake de Maracuyá" data-precio="15" data-img="img/Catálogo/Cheesecake_Maracuyá.jpg">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Chocochip.jpg" alt="Producto 2">
         <p>Galletas de Chocochip</p>
         <p>S/5.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Galletas de Chocochip" data-precio="5" data-img="img/Catálogo/Chocochip.jpg">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Chocotejas.webp" alt="Producto 2">
         <p>Chocotejas artesanales</p>
         <p>S/3.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Chocotejas artesanales" data-precio="3" data-img="img/Catálogo/Chocotejas.webp">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Mousse_Limon.jpg" alt="Producto 2">
         <p>Mousse de Limón</p>
         <p>S/15.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Mousse de Limón" data-precio="15" data-img="img/Catálogo/Mousse_Limon.jpg">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Pastel_Blanco.jpg" alt="Producto 2">
         <p>Pastel con relleno de chocolate blanco</p>
         <p>S/15.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Pastel con relleno de chocolate blanco" data-precio="15" data-img="img/Catálogo/Pastel_Blanco.jpg">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/Tortal_Chocolate.jpg" alt="Producto 2">
         <p>Torta húmeda de chocolate</p>
         <p>S/15.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Torta húmeda de chocolate" data-precio="15" data-img="img/Catálogo/Tortal_Chocolate.jpg">Agregar al carrito</button>
       </div>
        <div class="producto-img">
         <img src="../img/Catálogo/trufas.jpg" alt="Producto 2">
         <p>Trufas con relleno de coco</p>
         <p>S/3.00</p>
-        <button class="boton">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Trufas con relleno de coco" data-precio="3" data-img="img/Catálogo/trufas.jpg">Agregar al carrito</button>
       </div>
     </div>
   </main>
 
   
-  <!-- Parte Final -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section center">
-        <img src="../img/dolcezza.png" alt="Logo" class="footer-logo-grande">
-         <h3>Dolcezza</h3>
-         <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
-      </div>
-      <div class="footer-section">
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logo y descripción -->
+   <div class="footer-section center">
+  <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+  <h3>Dolcezza</h3>
+  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+</div>
+
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-section">
       <h4>Enlaces Rápidos</h4>
       <ul>
         <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../Postres/Dulces.html">Dulces</a></li>
+        <li><a href="../Postres/General.html">Postres</a></li>
         <li><a href="../Postres/Chocolateria.html">Chocolatería</a></li>
         <li><a href="../Contacto.html">Contacto</a></li>
       </ul>
     </div>
-      <div class="footer-section">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/dolcezza.freshcooking"><img src="../img/instagram.svg" alt="Instagram">Dolcezza.freshcooking</a></li>
-          <li><a href="https://wa.me/51999999999"><img src="../img/ws.png" alt="WhatsApp">WhatsApp</a></li>
-          <li>📍 Chiclayo, Perú</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Métodos de Pago</h4>
-        <img src="../img/VISA.png" alt="Visa"/><span>Visa</span>
-        <img src="../img/MarterCard.png" alt="Mastercard"/><span>Mastercard</span>
-        <img src="../img/YAPE.png" alt="Yape"/><span>Yape</span>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Dolcezza Fresh Cooking
-    </div>
-  </footer>
 
+    <!-- Contacto -->
+    <div class="footer-section">
+      <h4>Contáctanos</h4>
+      <p>
+        <a href="https://wa.me/51945027855" target="_blank">
+          <img src="../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+        </a>
+       </p>
+       <p> 
+        <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+          <img src="../img/instagram.svg" alt="Instagram" /> <span>Dolcezza.freshcooking</span>
+        </a>
+      </p>
+      <p>📍 Chiclayo, Perú</p>
+    </div>
+    <!---Métodos de Pago -->
+    <div class="footer-section">
+        <h4>Métodos de Pago</h4>
+        <p>
+        <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </p>
+        <p>
+        <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </p>
+        <p>
+        <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>yape</span>
+        </p>
+      </div>
+  </div>
+
+  <!-- Créditos -->
+  <div class="footer-bottom">
+    <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script src="../JS/script.js"></script>
 </body>
 </html>

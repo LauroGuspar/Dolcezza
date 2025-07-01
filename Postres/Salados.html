@@ -15,28 +15,32 @@
       </a>
       <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
     </div>
-    <nav class="nav-bar">
-  <ul class="menu-principal">
-    <li><a href="../index.html">Inicio</a></li>
-    
-    <li class="menu-productos">
-      <input type="checkbox" id="toggle-productos">
-      <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
-      <ul class="submenu">
-        <li><a href="../Postres/General.html">General</a></li>
-        <li><a href="../Postres/Chocolateria.html">Chocolatería</a></li>
-        <li><a href="../Postres/Dulces.html">Dulces</a></li>
+    <nav class="nav" id="nav">
+      <ul class="menu-principal">
+        <li><a href="../index.html">Inicio</a></li>
+        
+        <li class="menu-productos">
+          <input type="checkbox" id="toggle-productos">
+          <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+          <ul class="submenu">
+            <li><a href="../Postres/General.html">General</a></li>
+            <li><a href="../Postres/Chocolateria.html">Chocolatería</a></li>
+            <li><a href="../Postres/Dulces.html">Dulces</a></li>
+          </ul>
+        </li>
+        <li><a href="../Contacto.html">Contacto</a></li>
+        <div>
+          <a href="../Carrito.html" class="cart-icon">
+            <img src="../img/car.png" alt="Carrito" class="icon-small"/>
+          </a>
+        </div>
       </ul>
-    </li>
-    <li><a href="../Contacto.html">Contacto</a></li>
-    <div>
-      <a href="../Carrito.html" class="cart-icon">
-        <img src="../img/car.png" alt="Carrito" class="icon-small"/>
-      </a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </ul>
-</nav>
-
   </header>
 
 <main>
@@ -46,42 +50,63 @@
   </section>
 </main>
 
- <!-- Parte Final -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section center">
-        <img src="../img/dolcezza.png" alt="Logo" class="footer-logo-grande">
-         <h3>Dolcezza</h3>
-         <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
-      </div>
-      <div class="footer-section">
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logo y descripción -->
+   <div class="footer-section center">
+  <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+  <h3>Dolcezza</h3>
+  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+</div>
+
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-section">
       <h4>Enlaces Rápidos</h4>
       <ul>
-        <li><a href="../Dolcezza/index.html">Inicio</a></li>
-        <li><a href="../Dolcezza/Postres/General.html">Postres</a></li>
-        <li><a href="../Dolcezza/Postres/Chocolateria.html">Chocolatería</a></li>
-        <li><a href="Contacto.html">Contacto</a></li>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../Postres/General.html">Postres</a></li>
+        <li><a href="../Postres/Chocolateria.html">Chocolatería</a></li>
+        <li><a href="../Contacto.html">Contacto</a></li>
       </ul>
     </div>
-      <div class="footer-section">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/dolcezza.freshcooking"><img src="../img/instagram.svg" alt="Instagram">Dolcezza.freshcooking</a></li>
-          <li><a href="https://wa.me/51999999999"><img src="../img/ws.png" alt="WhatsApp">WhatsApp</a></li>
-          <li>📍 Chiclayo, Perú</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Métodos de Pago</h4>
-        <img src="../img/VISA.png" alt="Visa"/><span>Visa</span>
-        <img src="../img/MarterCard.png" alt="Mastercard"/><span>Mastercard</span>
-        <img src="../img/YAPE.png" alt="Yape"/><span>Yape</span>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Dolcezza Fresh Cooking
-    </div>
-  </footer>
 
+    <!-- Contacto -->
+    <div class="footer-section">
+      <h4>Contáctanos</h4>
+      <p>
+        <a href="https://wa.me/51945027855" target="_blank">
+          <img src="../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+        </a>
+       </p>
+       <p> 
+        <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+          <img src="../img/instagram.svg" alt="Instagram" /> <span>Dolcezza.freshcooking</span>
+        </a>
+      </p>
+      <p>📍 Chiclayo, Perú</p>
+    </div>
+    <!---Métodos de Pago -->
+    <div class="footer-section">
+        <h4>Métodos de Pago</h4>
+        <p>
+        <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </p>
+        <p>
+        <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </p>
+        <p>
+        <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>yape</span>
+        </p>
+      </div>
+  </div>
+
+  <!-- Créditos -->
+  <div class="footer-bottom">
+    <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script src="../JS/script.js"></script>
 </body>
 </html>

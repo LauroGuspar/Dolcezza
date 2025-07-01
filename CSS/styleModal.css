@@ -1,0 +1,18 @@
+.modal-pago {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-contenido {
+  background: #fff; border-radius: 16px; padding: 2em; width: 320px; max-width: 90vw; text-align: center; position: relative;
+  box-shadow: 0 0 18px 0 #8883;
+}
+.cerrar-modal {
+  position: absolute; right: 14px; top: 10px; font-size: 2em; color: #f2799b; cursor: pointer;
+}
+.modal-contenido input {
+  width: 90%; margin-bottom: 12px; padding: 7px; border-radius: 8px; border: 1px solid #ccc;
+}
+.modal-contenido label { display:block; text-align:left; margin:10px 0 2px 0; color:#555;}

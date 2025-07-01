@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolcezza - General</title>
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/styleModal.css">
 </head>
 <body>
 
@@ -15,23 +16,28 @@
       </a>
       <span class="titulo-sitio">Dolcezza Fresh Cooking</span>
     </div>
-    <nav class="nav-bar">
-  <ul class="menu-principal">
-    <li><a href="index.html">Inicio</a></li>
-    
-    <li class="menu-productos">
-      <input type="checkbox" id="toggle-productos">
-      <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
-      <ul class="submenu">
-         <li><a href="Postres/General.html">General</a></li>
-        <li><a href="Postres/Chocolateria.html">Chocolatería</a></li>
-        <li><a href="Postres/Dulces.html">Dulces</a></li>
-        <li><a href="Postres/Salados.html">Salados</a></li>
+    <nav class="nav" id="nav">
+      <ul class="menu-principal">
+        <li><a href="index.html">Inicio</a></li>
+        
+        <li class="menu-productos">
+          <input type="checkbox" id="toggle-productos">
+          <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+          <ul class="submenu">
+            <li><a href="Postres/General.html">General</a></li>
+            <li><a href="Postres/Chocolateria.html">Chocolatería</a></li>
+            <li><a href="Postres/Dulces.html">Dulces</a></li>
+            <li><a href="Postres/Salados.html">Salados</a></li>
+          </ul>
+        </li>
+        <li><a href="Contacto.html">Contacto</a></li>
       </ul>
-    </li>
-     <li><a href="Contacto.html">Contacto</a></li>
-    <div>
-    
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
    <!-- CONTENIDO-CARRITO -->
 <h2>Mis compras </h2>
@@ -46,14 +52,14 @@
   <div class="opciones-pago">
     <label class="opcion">
       <input type="radio" name="pago" value="tarjeta">
-      <img src="img/VISA.png" alt="Visa">
-      <img src="img/MarterCard.png" alt="MarterCard">
+      <img src="img/MetodosPago/VISA.png" alt="Visa">
+      <img src="img/MetodosPago/MasterCard.png" alt="MasterCard">
       <span>Tarjeta (Visa / Mastercard)</span>
     </label>
 
     <label class="opcion">
       <input type="radio" name="pago" value="yape">
-      <img src="img/YAPE.png" alt="Yape">
+      <img src="img/MetodosPago/YAPE.png" alt="Yape">
       <p>
       <span>Yape</span>
       </p>
@@ -63,15 +69,20 @@
   <button onclick="pagar()" class="boton-pago">Ir a pagar</button>
 </section>
 
-
-  
  <!-- Parte final -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section center">
-        <img src="img/dolcezza.png" alt="Logo" class="footer-logo-grande">
-      </div>
-      <div class="footer-section">
+ <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Logo y descripción -->
+   <div class="footer-section center">
+  <img src="img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+  <h3>Dolcezza</h3>
+  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+</div>
+
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-section">
       <h4>Enlaces Rápidos</h4>
       <ul>
         <li><a href="../Dolcezza/index.html">Inicio</a></li>
@@ -80,53 +91,73 @@
         <li><a href="Contacto.html">Contacto</a></li>
       </ul>
     </div>
-      <div class="footer-section">
-        <h3>Contacto</h3>
-        <ul>
-          <li><a href="https://www.instagram.com/dolcezza.freshcooking"><img src="img/instagram.svg" alt="Instagram">Dolcezza.freshcooking</a></li>
-          <li><a href="https://wa.me/51999999999"><img src="img/ws.png" alt="WhatsApp">WhatsApp</a></li>
-          <p>📍 Chiclayo, Perú</p>
-        </ul>
-      </div>
-      <div class="footer-section">
+
+    <!-- Contacto -->
+    <div class="footer-section">
+      <h4>Contáctanos</h4>
+      <p>
+        <a href="https://wa.me/51945027855" target="_blank">
+          <img src="img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+        </a>
+       </p>
+       <p> 
+        <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+          <img src="img/instagram.svg" alt="Instagram" /> <span>Dolcezza.freshcooking</span>
+        </a>
+      </p>
+      <p>📍 Chiclayo, Perú</p>
+    </div>
+    <!---Métodos de Pago -->
+    <div class="footer-section">
         <h4>Métodos de Pago</h4>
-        <img src="img/VISA.png" alt="Visa"/><span>Visa</span>
-        <img src="img/MarterCard.png" alt="Mastercard"><span>Mastercard</span>
-        <img src="img/YAPE.png" alt="Yape"/><span>Yape</span>
+        <p>
+        <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </p>
+        <p>
+        <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </p>
+        <p>
+        <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>yape</span>
+        </p>
       </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 Dolcezza Fresh Cooking
-    </div>
-  </footer>
+  </div>
 
+  <!-- Créditos -->
+  <div class="footer-bottom">
+    <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-<script>
-function mostrarCarrito() {
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const contenedor = document.getElementById("carrito-contenido");
-  const totalElemento = document.getElementById("total");
+<!-- Modal para Tarjeta -->
+<div id="modal-tarjeta" class="modal-pago" style="display:none;">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" onclick="cerrarModal('modal-tarjeta')">&times;</span>
+    <h3>Pago con Tarjeta</h3>
+    <form id="form-tarjeta">
+      <label>Nombre del titular:</label>
+      <input type="text" name="nombre" required>
+      <label>Número de tarjeta:</label>
+      <input type="text" name="numero" maxlength="16" pattern="\d{16}" required>
+      <label>Fecha de expiración:</label>
+      <input type="month" name="expiracion" required>
+      <label>Clave:</label>
+      <input type="password" name="clave" maxlength="4" pattern="\d{4}" required>
+      <button type="submit" class="boton">Pagar</button>
+    </form>
+  </div>
+</div>
 
-  contenedor.innerHTML = "";
-  let total = 0;
+<!-- Modal para Yape -->
+<div id="modal-yape" class="modal-pago" style="display:none;">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" onclick="cerrarModal('modal-yape')">&times;</span>
+    <h3>Pago con Yape</h3>
+    <p>Escanea el código QR para realizar el pago:</p>
+    <img src="img/MetodosPago/QR.png" alt="QR Yape" style="width:250px; display:block; margin:auto;">
+    <button class="boton" onclick="cerrarModal('modal-yape')">Listo</button>
+  </div>
+</div>
 
-  carrito.forEach(producto => {
-    const item = document.createElement("p");
-    item.textContent = `${producto.nombre} - S/${producto.precio.toFixed(2)}`;
-    contenedor.appendChild(item);
-    total += producto.precio;
-  });
-
-  totalElemento.textContent = total.toFixed(2);
-}
-
-function vaciarCarrito() {
-  localStorage.removeItem("carrito");
-  mostrarCarrito();
-}
-
-mostrarCarrito();
-</script>
-
+<script src="JS/script.js"></script>
 </body>
 </html>
