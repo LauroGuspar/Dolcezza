@@ -146,16 +146,91 @@ header nav {
 .submenu li { margin-bottom: 8px; }
 .submenu li:last-child { margin-bottom: 0; }
 .submenu a { color: #883737; }
-
+/*---------- Body ----------*/
 /* Hero */
+.carousel-menu {
+  width: 90vw;
+  max-width: 1100px;
+  margin: 20px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 330px;
+  position: relative;
+  overflow: visible;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0.4;
+  z-index: 1;
+  transition: 
+    transform 0.6s cubic-bezier(.7,0,.3,1),
+    opacity 0.6s cubic-bezier(.7,0,.3,1),
+    box-shadow 0.4s;
+  box-shadow: none;
+  pointer-events: none; /* <- por defecto nada recibe clic */
+}
+.carousel-item img {
+  width: 410px;
+  max-width: 80vw;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 28px 0 #2222;
+}
+
+.carousel-item.active {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  z-index: 4;
+  pointer-events: auto;
+  filter: none;
+  pointer-events: none;
+}
+.carousel-item.left, .carousel-item.right {
+  pointer-events: auto;  /* <- solo las laterales son clickeables */
+  z-index: 3;
+  opacity: 0.7;
+  filter: brightness(0.8) grayscale(20%) blur(0.5px);
+  cursor: pointer;
+}
+.carousel-item.left {
+  transform: translateX(-120%) scale(0.86);
+}
+.carousel-item.right {
+  transform: translateX(20%) scale(0.86);
+}
+
+/* Oculta los items que no están cerca del centro */
+.carousel-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.6);
+  z-index: 1;
+}
+
 .hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 20px 40px 20px;
+  align-items: center;
+  align-content: center;
 }
 
 .hero img {
   width: 100%;
-  max-height: 400px;
+  max-height: 382px;
   object-fit: cover;
   border-radius: 10px;
   animation: fadeInUp 1.5s ease;
@@ -164,7 +239,7 @@ header nav {
 .hero h1 {
   font-size: 2.5rem;
   color: #a14d4d;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .hero p {
@@ -172,6 +247,7 @@ header nav {
   margin: 10px 0 20px;
   color: #6e4c4c;
 }
+
 
 .boton {
   background-color: #ff8fa3;
@@ -189,24 +265,7 @@ header nav {
   transform: scale(1.05);
 }
 
-/* Categorías */
-@media (max-width: 768px) {
-  .categorias {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .categorias img {
-    width: 80%;
-    margin-bottom: 10px;
-  }
-}
-.categorias {
-  margin: 40px 0;
-  text-align: center;
-}
-
-
+/* ------------- Categorías ------------- */
 .categorias h2 {
   font-size: 2rem;
   margin-bottom: 30px;
@@ -266,7 +325,7 @@ header nav {
   background-color: #e5708e;
 }
 
-/* Productos */
+/* ------------- Productos ------------- */
 .productos {
   padding: 40px 20px;
   text-align: center;
@@ -308,6 +367,7 @@ header nav {
 }
 
 .producto-img img {
+  cursor: pointer;
   width: 100%;
   height: 150px;
   object-fit: cover;
@@ -319,7 +379,7 @@ header nav {
   font-weight: bold;
 }
 
-/* Footer */
+/* ------------- Footer ------------- */
 .footer {
   background-color: #ffe6e1;
   padding: 40px 20px;
@@ -437,7 +497,7 @@ header nav {
 }
 
 
-/* Carrito */
+/* ------------- Carrito ------------- */
 .carrito {
   width: 24px;
   height: 24px;
@@ -464,7 +524,7 @@ header nav {
   right: 20px;
 }
 
-/*Metodos de Pago*/
+/* ------------- Metodos de Pago ------------- */
 
 .metodo-pago {
   padding: 20px;
@@ -523,7 +583,7 @@ header nav {
   background-color: #e25d8c;
 }
 
-/*Contacto*/
+/* ------------- Contacto ------------- */
 .contacto {
   padding: 2rem;
   background-color: #fff2ef;
@@ -558,9 +618,38 @@ header nav {
   height: 24px;
 }
 
-
 /* Responsive */
 /* Responsive para móviles (ancho máximo 768px) */
+@media (max-width: 900px) {
+  .carousel-menu {
+    height: 400px;
+    margin: 0 auto;
+    max-width: 98vw;
+  }
+  
+  .carousel-item img {
+    width: 165vh;
+    height: 430px;
+    min-width: 100px;
+  }
+
+  .carousel-track{
+    height:400px;
+  }
+  .carousel-item.left,
+  .carousel-item.right,
+  .carousel-item.hidden {
+    display: none !important;
+  }
+  .carousel-item.active {
+    display: block !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    transform: translateX(-50%) scale(1) !important;
+    z-index: 4;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     align-items: center;
@@ -573,30 +662,40 @@ header nav {
     gap: 1rem;
   }
 
+  .categorias {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categorias img {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
   .nav {
-      position: absolute;
-      top: 100px;
-      left: 0;
-      background: #ffe6e1;
-      width: 100%;
-      height: 0;
-      overflow: hidden;
-      transition: height 0.3s;
-    }
-    .nav.active {
-      height: 175px; /* 4 links * 45px */
-    }
-    .nav ul {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    .nav ul li {
-      margin: 15px 0;
-    }
-    .hamburger {
-      display: flex;
-    }
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: #ffe6e1;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+  .nav.active {
+    height: 175px;
+  }
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .nav ul li {
+    margin: 15px 0;
+  }
+  .hamburger {
+    display: flex;
+  }
 
   .cart-icon {
     top: 11%;
@@ -630,7 +729,7 @@ header nav {
     flex-wrap: wrap;
   }
 
-.categoria-lista,
+  .categoria-lista,
   .producto-lista,
   .footer-container,
   .footer-contenido {
@@ -694,6 +793,20 @@ header nav {
   }
 }
 
+@media (max-width: 600px) {
+  .carousel-menu {
+    height: 195px;
+    max-width: 99vw;
+  }
+  .carousel-track {
+    height: 215px;
+  }
+  .carousel-item img {
+    height: 210px;
+    min-width: 90px;
+  }
+}
+
 @media (max-width:376px) {
     .cart-icon {
     position: absolute;
@@ -705,4 +818,3 @@ header nav {
         padding: 5px;
     }
 }
-
