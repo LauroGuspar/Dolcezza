@@ -149,13 +149,21 @@
     <div class="footer-section">
         <h4>Métodos de Pago</h4>
         <p>
-        <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+          w+
+          
+          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+            <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+          </a>
         </p>
         <p>
-        <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+            <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+          </a>
         </p>
         <p>
-        <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>yape</span>
+          <a href="Carrito.html#modal-yape" class="metodo-pago-link">
+            <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
+          </a>
         </p>
       </div>
   </div>
@@ -166,14 +174,5 @@
   </div>
 </footer>
 <script src="JS/script.js"></script>
-<script>
-function agregarAlCarrito(nombre, precio) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito.push({ nombre, precio });
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  alert(nombre + " se agregó al carrito");
-}
-</script>
-
 </body>
 </html>
