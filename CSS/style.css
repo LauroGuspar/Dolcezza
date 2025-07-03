@@ -256,6 +256,7 @@ header nav {
   border: none;
   border-radius: 20px;
   font-weight: bold;
+  text-align: center;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -683,6 +684,7 @@ header nav {
     transition: height 0.3s;
   }
   .nav.active {
+    z-index: 10000;
     height: 175px;
   }
   .nav ul {
