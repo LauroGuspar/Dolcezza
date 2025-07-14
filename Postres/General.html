@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dolcezza - General</title>
-  <link rel="stylesheet" href="../CSS/style.css"> 
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/styleModal.css">
 </head>
 <body>
 
@@ -28,6 +29,17 @@
         </ul>
       </li>
       <li><a href="../Contacto.html">Contacto</a></li>
+      <li class="menu-usuario">
+        <input type="checkbox" id="toggle-usuario">
+        <label for="toggle-usuario" id="user-menu" class="hamburguesa">
+          <img src="../img/icon/usuario.png" alt="userIMG" class="imgUser">
+          Iniciar Sesión ▾
+        </label>
+        <ul class="submenu" id="user-dropdown">
+          <li><a href="../registro.html">Registrar</a></li>
+          <li><a href="../login.html">Iniciar sesión</a></li>
+        </ul>
+      </li>
       <div>
         <a href="../Carrito.html" class="cart-icon">
           <img src="../img/car.png" alt="Carrito" class="icon-small"/>
@@ -103,15 +115,15 @@
   </main>
 
   
- <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
     
     <!-- Logo y descripción -->
-   <div class="footer-section center">
-  <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
-  <h3>Dolcezza</h3>
-  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
-</div>
+    <div class="footer-section center">
+      <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+      <h3>Dolcezza</h3>
+      <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+    </div>
 
 
     <!-- Enlaces rápidos -->
@@ -142,23 +154,23 @@
     </div>
     <!---Métodos de Pago -->
     <div class="footer-section">
-        <h4>Métodos de Pago</h4>
-        <p>
-            <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
-                <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
-            </a>
-        </p>
-        <p>
-            <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
-                <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
-            </a>
-        </p>
-        <p>
-            <a href="../Carrito.html#modal-yape" class="metodo-pago-link">
-                <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
-            </a>
-        </p>
-      </div>
+      <h4>Métodos de Pago</h4>
+      <p>
+         <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
+           <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </a>
+      </p>
+      <p>
+        <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
+          <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </a>
+      </p>
+       <p>
+        <a href="../Carrito.html#modal-yape" class="metodo-pago-link">
+          <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
+        </a>
+      </p>
+    </div>
   </div>
 
   <!-- Créditos -->
@@ -166,6 +178,23 @@
     <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
   </div>
 </footer>
-<script src="../JS/script.js"></script>
+  <!-- Modal -->
+  <div id="modal-producto" class="modal-pago" style="display:none;">
+    <div class="modal-producto-contenido">
+      <span class="cerrar-modal" onclick="cerrarModalProducto()">&times;</span>
+      <div class="modal-producto-flex">
+        <div class="modal-producto-img">
+          <img id="modal-img-producto" src="" alt="" style="width:240px; border-radius:12px;">
+        </div>
+        <div class="modal-producto-info">
+          <h3 id="modal-nombre-producto"></h3>
+          <p id="modal-desc-producto" style="margin-bottom:20px;"></p>
+          <p id="modal-precio-producto" style="font-weight:bold;"></p>
+          <button id="modal-btn-carrito" class="boton agregar-carrito-modal">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../JS/script.js"></script>
 </body>
 </html>

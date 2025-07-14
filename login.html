@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dolcezza - General</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="CSS/styleModal.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
-
   <header>
     <div class="logo-container">
       <a href="index.html" class="logo-link">
@@ -19,7 +17,6 @@
     <nav class="nav" id="nav">
       <ul class="menu-principal">
         <li><a href="index.html">Inicio</a></li>
-        
         <li class="menu-productos">
           <input type="checkbox" id="toggle-productos">
           <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
@@ -42,6 +39,11 @@
             <li><a href="login.html">Iniciar sesión</a></li>
           </ul>
         </li>
+        <div>
+          <a href="Carrito.html" class="cart-icon">
+            <img src="img/car.png" alt="Carrito" class="icon-small" />
+          </a>
+        </div>
       </ul>
     </nav>
     <div class="hamburger" id="hamburger">
@@ -51,33 +53,19 @@
     </div>
   </header>
 
-<!-- CONTENIDO-CARRITO -->
-  <div class="carrito-wrapper">
-    <h2>Mis compras</h2>
-    <div id="carrito-contenido"></div>
-    <p class="total">Total: S/<span id="total">0.00</span></p>
-    <button onclick="vaciarCarrito()" class="boton">Vaciar carrito</button>
-
-    <!--Metodos de Pagos-->
-    <section class="metodo-pago">
-      <h2>Elige tu método de pago</h2>
-      <div class="opciones-pago">
-        <label class="opcion">
-          <input type="radio" name="pago" value="tarjeta">
-          <img src="img/MetodosPago/VISA.png" alt="Visa" class="icon-small">
-          <img src="img/MetodosPago/MasterCard.png" alt="MasterCard" class="icon-small">
-          <span>Tarjeta</span>
-        </label>
-
-        <label class="opcion">
-          <input type="radio" name="pago" value="yape">
-          <img src="img/MetodosPago/YAPE.png" alt="Yape" class="icon-small">
-          <span>Yape</span>
-        </label>
-      </div>
-      <button onclick="pagar()" class="boton-pago">Ir a pagar</button>
-    </section>
-  </div>
+  <main class="form-contenedor">
+    <h2>Iniciar Sesión</h2>
+    <form id="form-login">
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" required>
+      <label for="login-pass">Contraseña:</label>
+      <input type="password" id="login-pass" required>
+      <button type="submit" class="boton">Ingresar</button>
+    </form>
+    <label>No tienes cuenta? Registrate aqui &#8594;
+      <a href="registro.html" class="link" style="text-decoration: none;">Registrarse</a>
+    </label>
+  </main>
 
 <!-- Footer -->
 <footer class="footer">
@@ -141,37 +129,6 @@
     <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
   </div>
 </footer>
-
-<!-- Modal para Tarjeta -->
-<div id="modal-tarjeta" class="modal-pago" style="display:none;">
-  <div class="modal-contenido">
-    <span class="cerrar-modal" onclick="cerrarModal('modal-tarjeta')">&times;</span>
-    <h3>Pago con Tarjeta</h3>
-    <form id="form-tarjeta">
-      <label>Nombre del titular:</label>
-      <input type="text" name="nombre" required>
-      <label>Número de tarjeta:</label>
-      <input type="text" name="numero" maxlength="16" pattern="\d{16}" required>
-      <label>Fecha de expiración:</label>
-      <input type="month" name="expiracion" required>
-      <label>CVC:</label>
-      <input type="password" name="clave" maxlength="4" pattern="\d{4}" required>
-      <button type="submit" class="boton">Pagar</button>
-    </form>
-  </div>
-</div>
-
-<!-- Modal para Yape -->
-<div id="modal-yape" class="modal-pago" style="display:none;">
-  <div class="modal-contenido">
-    <span class="cerrar-modal" onclick="cerrarModal('modal-yape')">&times;</span>
-    <h3>Pago con Yape</h3>
-    <p>Escanea el código QR para realizar el pago:</p>
-    <img src="img/MetodosPago/QR.png" alt="QR Yape" style="width:250px; display:block; margin:auto;">
-    <button class="boton" onclick="cerrarModal('modal-yape')">Listo</button>
-  </div>
-</div>
-
-<script src="JS/script.js"></script>
+  <script src="JS/script.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dulces - Dolcezza</title>
   <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/styleModal.css">
 </head>
 <body>
   <header>
@@ -27,6 +28,17 @@
           </ul>
         </li>
         <li><a href="../Contacto.html">Contacto</a></li>
+         <li class="menu-usuario">
+          <input type="checkbox" id="toggle-usuario">
+          <label for="toggle-usuario" id="user-menu" class="hamburguesa">
+            <img src="../img/icon/usuario.png" alt="userIMG" class="imgUser">
+            Iniciar Sesión ▾
+          </label>
+          <ul class="submenu" id="user-dropdown">
+            <li><a href="../registro.html">Registrar</a></li>
+            <li><a href="../login.html">Iniciar sesión</a></li>
+          </ul>
+        </li>
         <div>
           <a href="../Carrito.html" class="cart-icon">
             <img src="../img/car.png" alt="Carrito" class="icon-small"/>
@@ -46,48 +58,68 @@
     <div class="producto-lista">
       <!-- Productos de la categoría dulces -->
       <div class="producto-img">
-        <img src="../img/Catálogo/Brownie.jpg" alt="Producto 1">
+        <img src="../img/Catálogo/Brownie.jpg" alt="Brownie" class="img-producto"
+          data-nombre="Brownie Con Relleno de Queso Crema"
+          data-precio="10"
+          data-img="../img/Catálogo/Brownie.jpg"
+          data-descripcion="Brownie con relleno de queso crema."/>
         <p>Brownie con relleno de queso crema</p>
         <p>S/10.00</p>
-        <button class="boton agregar-carrito" data-nombre="Brownie Con Relleno de Queso Crema" data-precio="10" data-img="img/Catálogo/Brownie.jpg">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Brownie Con Relleno de Queso Crema" data-precio="10" data-img="../img/Catálogo/Brownie.jpg">Agregar al carrito</button>
       </div>
       <div class="producto-img">
-        <img src="../img/Catálogo/Cheesecake_Fresa.webp" alt="Producto 2">
+        <img src="../img/Catálogo/Cheesecake_Fresa.webp" alt="Cheesecake de Fresa" class="img-producto"
+          data-nombre="Cheesecake de Fresa"
+          data-precio="15"
+          data-img="../img/Catálogo/Cheesecake_Fresa.webp"
+          data-descripcion="Delicioso cheesecake de fresa."/>
         <p>Cheesecake de Fresa</p>
         <p>S/15.00</p>
-        <button class="boton agregar-carrito" data-nombre="Cheesecake de Fresa" data-precio="15" data-img="img/Catálogo/Cheesecake_Fresa.webp">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Cheesecake de Fresa" data-precio="15" data-img="../img/Catálogo/Cheesecake_Fresa.webp">Agregar al carrito</button>
       </div>
       <div class="producto-img">
-        <img src="../img/Catálogo/Chocochip.jpg" alt="Producto 2">
+        <img src="../img/Catálogo/Chocochip.jpg" alt="Galletas de Chocochip" class="img-producto"
+          data-nombre="Galletas de Chocochip"
+          data-precio="5"
+          data-img="../img/Catálogo/Chocochip.jpg"
+          data-descripcion="Deliciosas galletas con chispas de chocolate."/>
         <p>Galletas de Chocochip</p>
         <p>S/5.00</p>
-        <button class="boton agregar-carrito" data-nombre="Galletas de Chocochip" data-precio="5" data-img="img/Catálogo/Chocochip.jpg">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Galletas de Chocochip" data-precio="5" data-img="../img/Catálogo/Chocochip.jpg">Agregar al carrito</button>
       </div>
       <div class="producto-img">
-        <img src="../img/Catálogo/Pastel_Blanco.jpg" alt="Producto 2">
+        <img src="../img/Catálogo/Pastel_Blanco.jpg" alt="Pastel con relleno de chocolate blanco" class="img-producto"
+          data-nombre="Pastel con relleno de chocolate blanco"
+          data-precio="15"
+          data-img="../img/Catálogo/Pastel_Blanco.jpg"
+          data-descripcion="Delicioso pastel con relleno de chocolate blanco."/>
         <p>Pastel con relleno de chocolate blanco</p>
         <p>S/15.00</p>
-        <button class="boton agregar-carrito" data-nombre="Pastel con relleno de chocolate blanco" data-precio="15" data-img="img/Catálogo/Pastel_Blanco.jpg">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Pastel con relleno de chocolate blanco" data-precio="15" data-img="../img/Catálogo/Pastel_Blanco.jpg">Agregar al carrito</button>
       </div>
       <div class="producto-img">
-        <img src="../img/Catálogo/Tortal_Chocolate.jpg" alt="Producto 2">
+        <img src="../img/Catálogo/Tortal_Chocolate.jpg" alt="Torta húmeda de chocolate" class="img-producto"
+          data-nombre="Torta húmeda de chocolate"
+          data-precio="15"
+          data-img="../img/Catálogo/Tortal_Chocolate.jpg"
+          data-descripcion="Deliciosa torta húmeda de chocolate."/>
         <p>Torta húmeda de chocolate</p>
         <p>S/15.00</p>
-        <button class="boton agregar-carrito" data-nombre="Torta húmeda de chocolate" data-precio="15" data-img="img/Catálogo/Tortal_Chocolate.jpg">Agregar al carrito</button>
+        <button class="boton agregar-carrito" data-nombre="Torta húmeda de chocolate" data-precio="15" data-img="../img/Catálogo/Tortal_Chocolate.jpg">Agregar al carrito</button>
       </div>
     </div>
   </main>
 
   
- <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
     
     <!-- Logo y descripción -->
-   <div class="footer-section center">
-  <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
-  <h3>Dolcezza</h3>
-  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
-</div>
+    <div class="footer-section center">
+      <img src="../img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+      <h3>Dolcezza</h3>
+      <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+    </div>
 
 
     <!-- Enlaces rápidos -->
@@ -118,23 +150,23 @@
     </div>
     <!---Métodos de Pago -->
     <div class="footer-section">
-        <h4>Métodos de Pago</h4>
-        <p>
-          <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
-          </a>
-        </p>
-        <p>
-          <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
-          </a>
-        </p>
-        <p>
-          <a href="../Carrito.html#modal-yape" class="metodo-pago-link">
-            <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
-          </a>
-        </p>
-      </div>
+      <h4>Métodos de Pago</h4>
+      <p>
+         <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
+           <img src="../img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </a>
+      </p>
+      <p>
+        <a href="../Carrito.html#modal-tarjeta" class="metodo-pago-link">
+          <img src="../img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </a>
+      </p>
+       <p>
+        <a href="../Carrito.html#modal-yape" class="metodo-pago-link">
+          <img src="../img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
+        </a>
+      </p>
+    </div>
   </div>
 
   <!-- Créditos -->
@@ -142,6 +174,23 @@
     <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
   </div>
 </footer>
+  <!-- Modal -->
+  <div id="modal-producto" class="modal-pago" style="display:none;">
+    <div class="modal-producto-contenido">
+      <span class="cerrar-modal" onclick="cerrarModalProducto()">&times;</span>
+      <div class="modal-producto-flex">
+        <div class="modal-producto-img">
+          <img id="modal-img-producto" src="" alt="" style="width:240px; border-radius:12px;">
+        </div>
+        <div class="modal-producto-info">
+          <h3 id="modal-nombre-producto"></h3>
+          <p id="modal-desc-producto" style="margin-bottom:20px;"></p>
+          <p id="modal-precio-producto" style="font-weight:bold;"></p>
+          <button id="modal-btn-carrito" class="boton agregar-carrito-modal">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="../JS/script.js"></script>
 </body>
 </html>

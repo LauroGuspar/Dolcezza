@@ -33,6 +33,17 @@
         </li>
       
         <li><a href="Contacto.html">Contacto</a></li>
+         <li class="menu-usuario">
+          <input type="checkbox" id="toggle-usuario">
+          <label for="toggle-usuario" id="user-menu" class="hamburguesa">
+            <img src="img/icon/usuario.png" alt="userIMG" class="imgUser">
+            Iniciar Sesión ▾
+          </label>
+          <ul class="submenu" id="user-dropdown">
+            <li><a href="registro.html">Registrar</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+          </ul>
+        </li>
         <div>
           <a href="Carrito.html" class="cart-icon">
             <img src="img/car.png" alt="Carrito" class="icon-small" />
@@ -41,9 +52,9 @@
       </ul>
     </nav>
     <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span id="span1"></span>
+      <span id="span2"></span>
+      <span id="span3"></span>
     </div>
   </header>
 
@@ -72,7 +83,7 @@
     <p>Delicias artesanales hechas con amor</p>
     <a href="Postres/General.html" class="boton">Ver Productos</a>
   </section>
-
+  
   <!-- Categorías -->
   <section class="categorias">
     <h2>Categorías</h2>
@@ -97,7 +108,6 @@
   <h2>Destacados</h2>
   <div class="producto-lista">
     <div class="producto-img">
-      
       <img src="img/Catálogo/Brownie.jpg" alt="Brownie" class="img-producto"
        data-nombre="Brownie"
        data-precio="10"
@@ -105,9 +115,7 @@
        data-descripcion="Delicioso brownie artesanal, húmedo y con intenso sabor a chocolate."/>
       <p>S/10.00</p>
       <p>Brownie</p>
-    <button class="boton agregar-carrito" data-nombre="Brownie" data-precio="10" data-img="img/Catálogo/Brownie.jpg">Agregar al carrito</button>
-
-      
+      <button class="boton agregar-carrito" data-nombre="Brownie" data-precio="10" data-img="img/Catálogo/Brownie.jpg">Agregar al carrito</button>
     </div>
     <div class="producto-img">
       <img src="img/Catálogo/Cheesecake_Fresa.webp" alt="Cheesecake de Fresa" class="img-producto"
@@ -140,20 +148,78 @@
       <button class="boton agregar-carrito" data-nombre="Galletas de Chocochip" data-precio="5" data-img="img/Catálogo/Chocochip.jpg">Agregar al carrito</button>
 
     </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/canapes.jpg" alt="Canapes" class="img-producto"
+           data-nombre="Canapes"
+           data-precio="10"
+           data-img="../img/Catálogo/canapes.jpg"
+           data-descripcion="Un apretivo hecho a base de pan y frutas" />
+      <p>Canapes</p>
+      <p>S/10.00</p>
+      <button class="boton agregar-carrito" data-nombre="Canapes" data-precio="10" data-img="img/Catálogo/canapes.jpg">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/empanadas.jpg" alt="Empanadas" class="img-producto"
+           data-nombre="Empanadas"
+           data-precio="15"
+           data-img="../img/Catálogo/empanadas.jpg"
+           data-descripcion="Una caja de seis empanas de jamon y queso" />
+      <p>Empanadas de jamón y queso</p>
+      <p>S/15.00</p>
+      <button class="boton agregar-carrito" data-nombre="Empanadas" data-precio="15" data-img="img/Catálogo/empanadas.jpg">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/frutos_secos.jpg" alt="frutos_secos" class="img-producto"
+           data-nombre="Barra de Frutos Secos"
+           data-precio="7"
+           data-img="../img/Catálogo/frutos_secos.jpg"
+           data-descripcion="Deliciosas barras de frutos secos" />
+      <p>Barra de frutos secos</p>
+      <p>S/7.00</p>
+      <button class="boton agregar-carrito" data-nombre="Barra de Frutos Secos" data-precio="5" data-img="img/Catálogo/frutos_secos.jpg">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/tarta_queso.jpg" alt="Tarta de queso" class="img-producto"
+           data-nombre="Tarta de queso"
+           data-precio="15"
+           data-img="../img/Catálogo/tarta_queso.jpg"
+           data-descripcion="Deliciosas tartas de queso para los amantes de lo salado" />
+      <p>Tarta de queso</p>
+      <p>S/15.00</p>
+      <button class="boton agregar-carrito" data-nombre="Tarta de queso" data-precio="15" data-img="img/Catálogo/tarta_queso.jpg">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/cheesecake_Azul.jpg" alt="Cheesecake con queso azul" class="img-producto"
+           data-nombre="Cheesecake con queso azul"
+           data-precio="15"
+           data-img="../img/Catálogo/cheesecake_Azul.jpg"
+           data-descripcion="Combina la cremosidad del cheesecake con el sabor fuerte del queso azul y la dulzura de las peras." />
+      <p>Cheesecake con queso azul</p>
+      <p>S/15.00</p>
+      <button class="boton agregar-carrito" data-nombre="Cheesecake con queso azul" data-precio="15" data-img="img/Catálogo/cheesecake_Azul.jpg">Agregar al carrito</button>
+    </div>
+    <div class="producto-img">
+      <img src="../img/Catálogo/cheesecake-salado.jpg" alt="Cheesecake con queso salado" class="img-producto"
+           data-nombre="Cheesecake con queso salado"
+           data-precio="15"
+           data-img="../img/Catálogo/cheesecake-salado.jpg"
+           data-descripcion="Postre cremoso e irresistible, a base de ricota" />
+      <p>Cheesecake salado</p>
+      <p>S/15.00</p>
+      <button class="boton agregar-carrito" data-nombre="Cheesecake salado" data-precio="15" data-img="img/Catálogo/cheesecake-salado.jpg">Agregar al carrito</button>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
- <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
-    
     <!-- Logo y descripción -->
-   <div class="footer-section center">
-  <img src="img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
-  <h3>Dolcezza</h3>
-  <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
-</div>
-
+    <div class="footer-section center">
+      <img src="img/dolcezza.png" alt="Logo Dolcezza" class="footer-logo-grande" />
+      <h3>Dolcezza</h3>
+      <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+    </div>
 
     <!-- Enlaces rápidos -->
     <div class="footer-section">
@@ -183,23 +249,23 @@
     </div>
     <!---Métodos de Pago -->
     <div class="footer-section">
-        <h4>Métodos de Pago</h4>
-        <p>
-          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
-          </a>
-        </p>
-        <p>
-          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
-          </a>
-        </p>
-        <p>
-          <a href="Carrito.html#modal-yape" class="metodo-pago-link">
-            <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
-          </a>
-        </p>
-      </div>
+      <h4>Métodos de Pago</h4>
+      <p>
+        <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+          <img src="img/MetodosPago/VISA.png" alt="Visa"/><span>Visa</span>
+        </a>
+      </p>
+      <p>
+        <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+          <img src="img/MetodosPago/MasterCard.png" alt="Mastercard"/><span>Mastercard</span>
+        </a>
+      </p>
+      <p>
+        <a href="Carrito.html#modal-yape" class="metodo-pago-link">
+          <img src="img/MetodosPago/YAPE.png" alt="Yape"/><span>Yape</span>
+        </a>
+      </p>
+    </div>
   </div>
 
   <!-- Créditos -->
@@ -208,7 +274,7 @@
   </div>
 </footer>
 
-<!-- Mdodal -->
+<!-- Modal -->
 <div id="modal-producto" class="modal-pago" style="display:none;">
   <div class="modal-producto-contenido">
     <span class="cerrar-modal" onclick="cerrarModalProducto()">&times;</span>
