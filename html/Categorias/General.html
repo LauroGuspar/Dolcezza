@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dolcezza - General</title>
+    <link rel="stylesheet" href="../../CSS/style.css" />
+    <link rel="stylesheet" href="../../CSS/styleModal.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header-container" id="header-container">
+      <!----- Aquí va el Header ------>
+    </header>
+
+    <!--- Contenido Principal --->
+    <main class="productos" id="General">
+      <h2>Nuestros Productos - General</h2>
+      <div class="producto-lista" id="galery-container"></div>
+    </main>
+
+    <!-- Footer --->
+    <footer class="footer" id="footer-container">
+      <!------- Aqui esta el footer -------->
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal-producto" class="modal-pago" style="display: none">
+      <div class="modal-producto-contenido">
+        <span class="cerrar-modal" onclick="cerrarModalProducto()"
+          >&times;</span
+        >
+        <div class="modal-producto-flex">
+          <div class="modal-producto-img">
+            <img
+              id="modal-img-producto"
+              src=""
+              alt=""
+              style="width: 240px; border-radius: 12px"
+            />
+          </div>
+          <div class="modal-producto-info">
+            <h3 id="modal-nombre-producto"></h3>
+            <p id="modal-desc-producto" style="margin-bottom: 20px"></p>
+            <p id="modal-precio-producto" style="font-weight: bold"></p>
+            <button id="modal-btn-carrito" class="boton agregar-carrito-modal">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../JS/script.js"></script>
+    <script src="../../JS/scriptCatalogo.js"></script>
+    <script src="../../JS/scriptHYF.js"></script>
+  </body>
+</html>

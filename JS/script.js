@@ -1,19 +1,18 @@
-// Devuelve el prefijo correcto según la ruta: "" si está en raíz, "../" si está en carpeta
 function rutaBase() {
-    // window.location.pathname = "/Postres/Dulces.html"
-    const partes = window.location.pathname.split('/');
-    // Ej: ["", "Postres", "Dulces.html"] -> longitud 3 (raíz sería 2)
-    return partes.length > 2 ? "../" : "";
+  const path = window.location.pathname.split('#')[0].split('?')[0];
+  const partes = path.split('/').filter(Boolean);
+
+  const iHtml = partes.indexOf('html');
+
+  if (iHtml === -1) return 'html/';
+
+  const esArchivo = partes[partes.length - 1].includes('.');
+  const dirs = esArchivo ? partes.slice(0, -1) : partes;
+
+  const profundidad = dirs.length - (iHtml + 1);
+
+  return profundidad > 0 ? '../'.repeat(profundidad) : '';
 }
-
-
-//---- Menu Hamburger -------
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
-
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-});
 
 // --- Carrito ---
 function guardarCarrito(carrito) {
@@ -23,37 +22,6 @@ function guardarCarrito(carrito) {
 function obtenerCarrito() {
   return JSON.parse(localStorage.getItem('carrito')) || [];
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelectorAll(".agregar-carrito").forEach(boton => {
-    boton.addEventListener("click", function() {
-      const nombre = this.getAttribute("data-nombre");
-      const precio = parseFloat(this.getAttribute("data-precio"));
-      const img = this.getAttribute("data-img");
-
-      let cantidad = prompt(`¿Cuántos "${nombre}" deseas agregar?`, "1");
-      cantidad = parseInt(cantidad);
-
-      if (isNaN(cantidad) || cantidad <= 0) {
-        alert("Por favor, ingresa una cantidad válida.");
-        return;
-      }
-
-      let carrito = obtenerCarrito();
-      let existente = carrito.find(item => item.nombre === nombre);
-
-      if (existente) {
-        existente.cantidad += cantidad;
-      } else {
-        carrito.push({ nombre, precio, cantidad, img });
-      }
-
-      guardarCarrito(carrito);
-      alert(`¡Agregaste ${cantidad} "${nombre}" al carrito!`);
-    });
-  });
-});
-
 
 // ------ Mostrar el carrito ------
 
@@ -191,14 +159,14 @@ function cerrarSesion() {
 
 // --- REGISTRO ---
 const formRegistro = document.getElementById('form-registro');
-if(formRegistro) {
-  formRegistro.addEventListener('submit', function(e) {
+if (formRegistro) {
+  formRegistro.addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('reg-email').value.trim();
     const nombres = document.getElementById('reg-nombre').value.trim();
     const apellidos = document.getElementById('reg-apellido').value.trim();
     const pass = document.getElementById('reg-pass').value;
-        
+
     let usuarios = getUsuarios();
     if (usuarios.find(u => u.email === email)) {
       alert('Ya existe un usuario con ese email');
@@ -214,8 +182,8 @@ if(formRegistro) {
 
 // --- LOGIN ---
 const formLogin = document.getElementById('form-login');
-if(formLogin) {
-  formLogin.addEventListener('submit', function(e) {
+if (formLogin) {
+  formLogin.addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('login-email').value.trim();
     const pass = document.getElementById('login-pass').value;
@@ -239,19 +207,19 @@ function actualizarMenuUsuario() {
   if (userMenu && submenu) {
     if (usuario) {
       userMenu.innerHTML = `
-        <img src="${base}img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
         ${usuario.nombres.split(" ")[0]} ▾
         `;
       submenu.innerHTML = `
         <li><a href="#" id="cerrar-sesion-link">Cerrar Sesión</a></li>
         `;
-      document.getElementById('cerrar-sesion-link').onclick = function(e) {
+      document.getElementById('cerrar-sesion-link').onclick = function (e) {
         e.preventDefault();
         cerrarSesion();
       };
     } else {
       userMenu.innerHTML = `
-        <img src="${base}img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
         Iniciar Sesión ▾
       `;
       submenu.innerHTML = `
@@ -279,7 +247,7 @@ function pagar() {
   }
 }
 
-// ----- Abrir/cerrar modal -------
+// ----- Abrir/cerrar modal (Pago) -------
 function abrirModal(id) {
   document.getElementById(id).style.display = "flex";
 }
@@ -288,8 +256,8 @@ function cerrarModal(id) {
 }
 
 // Validación del form Tarjeta
-document.addEventListener("DOMContentLoaded", function(){
-  document.getElementById("form-tarjeta").onsubmit = function(e) {
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("form-tarjeta").onsubmit = function (e) {
     e.preventDefault();
 
     alert("Pago realizado con éxito");
@@ -298,66 +266,7 @@ document.addEventListener("DOMContentLoaded", function(){
   };
 });
 
-// --- Modal del Producto ---
-document.querySelectorAll(".img-producto").forEach(img => {
-  img.addEventListener("click", function() {
-    // Info dentro de la imagen
-    const nombre = this.getAttribute("data-nombre");
-    const precio = parseFloat(this.getAttribute("data-precio"));
-    const imgSrc = this.getAttribute("data-img");
-    const descripcion = this.getAttribute("data-descripcion");
-
-    document.getElementById("modal-img-producto").src = imgSrc;
-    document.getElementById("modal-img-producto").alt = nombre;
-    document.getElementById("modal-nombre-producto").innerText = nombre;
-    document.getElementById("modal-desc-producto").innerText = descripcion;
-    document.getElementById("modal-precio-producto").innerText = `S/${precio.toFixed(2)}`;
-
-    // Guarda datos para el botón
-    const btn = document.getElementById("modal-btn-carrito");
-    btn.setAttribute("data-nombre", nombre);
-    btn.setAttribute("data-precio", precio);
-    btn.setAttribute("data-img", imgSrc);
-
-    document.getElementById("modal-producto").style.display = "flex";
-  });
-});
-
-// Cerrar el modal
-function cerrarModalProducto() {
-  document.getElementById("modal-producto").style.display = "none";
-}
-
-// --- Botón "Agregar al carrito" dentro del modal ---
-document.getElementById("modal-btn-carrito").addEventListener("click", function() {
-  const nombre = this.getAttribute("data-nombre");
-  const precio = parseFloat(this.getAttribute("data-precio"));
-  const img = this.getAttribute("data-img");
-
-  let cantidad = prompt(`¿Cuántos "${nombre}" deseas agregar?`, "1");
-  cantidad = parseInt(cantidad);
-
-  if (isNaN(cantidad) || cantidad <= 0) {
-    alert("Por favor, ingresa una cantidad válida.");
-    return;
-  }
-
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  let existente = carrito.find(item => item.nombre === nombre);
-
-  if (existente) {
-    existente.cantidad += cantidad;
-  } else {
-    carrito.push({ nombre, precio, cantidad, img });
-  }
-
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-  alert(`¡Agregaste ${cantidad} "${nombre}" al carrito!`);
-  cerrarModalProducto();
-});
-
 // -------------- Carrusel de Productos --------------
-
 let current = 0;
 const items = document.querySelectorAll('.carousel-item');
 let interval = null;
@@ -372,7 +281,7 @@ function addMobileClick() {
   items.forEach(item => {
     item.onclick = null;
     if (item.classList.contains('active') && isMobile()) {
-      item.onclick = function(e) {
+      item.onclick = function (e) {
         const bounds = this.getBoundingClientRect();
         const x = e.clientX - bounds.left;
         if (x < bounds.width / 2) {

@@ -1,0 +1,254 @@
+function rutaBase() {
+  const path = window.location.pathname.split('#')[0].split('?')[0];
+  const partes = path.split('/').filter(Boolean);
+
+  const iHtml = partes.indexOf('html');
+
+  if (iHtml === -1) return 'html/';
+
+  const esArchivo = partes[partes.length - 1].includes('.');
+  const dirs = esArchivo ? partes.slice(0, -1) : partes;
+
+  const profundidad = dirs.length - (iHtml + 1);
+
+  return profundidad > 0 ? '../'.repeat(profundidad) : '';
+}
+const baseHYF = rutaBase();
+
+function renderHeader() {
+  const header_container = document.getElementById('header-container');
+  header_container.innerHTML = "";
+  header_container.innerHTML = `
+    <div class="logo-container">
+      <a href="${baseHYF}index.html" class="logo-link">
+        <img src="${baseHYF}../img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
+      </a>
+      <a href="${baseHYF}index.html"><span class="titulo-sitio">Dolcezza Fresh Cooking</span></a>
+    </div>
+    <nav class="nav" id="nav">
+      <ul class="menu-principal">
+        <li><a href="${baseHYF}index.html">Inicio</a></li>
+
+        <li class="menu-productos">
+          <input type="checkbox" id="toggle-productos" />
+          <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
+          <ul class="submenu">
+            <li><a href="${baseHYF}Categorias/General.html">General</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Chocolateria.html">Chocolateria</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Dulces.html">Dulces</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Salados.html">Salados</a></li>
+          </ul>
+        </li>
+        <li><a href="${baseHYF}Contacto.html">Contacto</a></li>
+        <li class="menu-usuario">
+          <input type="checkbox" id="toggle-usuario" />
+          <label for="toggle-usuario" id="user-menu" class="hamburguesa">
+            <img
+              src="${baseHYF}../img/icon/usuario.png"
+              alt="userIMG"
+              class="imgUser"
+            />
+            Iniciar Sesión ▾
+          </label>
+          <ul class="submenu" id="user-dropdown">
+            <li><a href="${baseHYF}registro.html">Registrar</a></li>
+            <li><a href="${baseHYF}login.html">Iniciar sesión</a></li>
+          </ul>
+        </li>
+        <div>
+          <a href="${baseHYF}Carrito.html" class="cart-icon">
+            <img src="${baseHYF}../img/car.png" alt="Carrito" class="icon-small" />
+          </a>
+        </div>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  `;
+
+  // --- MENÚ USUARIO EN HEADER ---
+
+  const usuario = obtenerUsuarioActual();
+  const userMenu = document.getElementById('user-menu');
+  const submenu = document.getElementById('user-dropdown');
+  const base = rutaBase();
+  if (userMenu && submenu) {
+    if (usuario) {
+      userMenu.innerHTML = `
+        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        ${usuario.nombres.split(" ")[0]} ▾
+        `;
+      submenu.innerHTML = `
+        <li><a href="#" id="cerrar-sesion-link">Cerrar Sesión</a></li>
+        `;
+      document.getElementById('cerrar-sesion-link').onclick = function (e) {
+        e.preventDefault();
+        cerrarSesion();
+      };
+    } else {
+      userMenu.innerHTML = `
+        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        Iniciar Sesión ▾
+      `;
+      submenu.innerHTML = `
+        <li><a href="${base}registro.html">Registrar</a></li>
+        <li><a href="${base}login.html">Iniciar sesión</a></li>
+      `;
+    }
+  }
+
+  //---- Menu Hamburger -------
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+}
+
+function renderFooter() {
+  const footer_container = document.getElementById('footer-container');
+  footer_container.innerHTML = "";
+  footer_container.innerHTML = `
+    <div class="footer-container">
+      <!-- Logo y descripción -->
+      <div class="footer-section center">
+        <img
+          src="${baseHYF}../img/dolcezza.png"
+          alt="Logo Dolcezza"
+          class="footer-logo-grande"
+        />
+        <h3>Dolcezza</h3>
+        <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+      </div>
+      <div class="enlaces-rapidos">
+      <!-- Enlaces rápidos -->
+      <div class="footer-section" id="enlace-rapidos">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="${baseHYF}index.html">Inicio</a></li>
+          <li><a href="${baseHYF}Categorias/General.html">Postres</a></li>
+          <li><a href="${baseHYF}Contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-section" id="contacto">
+        <h4>Contáctanos</h4>
+        <p>
+          <a href="https://wa.me/51945027855" target="_blank">
+            <img src="${baseHYF}../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+          </a>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+            <img src="${baseHYF}../img/instagram.svg" alt="Instagram" />
+            <span>Dolcezza.freshcooking</span>
+          </a>
+        </p>
+        <p>📍 Chiclayo, Perú</p>
+      </div>
+
+      <!---Métodos de Pago -->
+      <div class="footer-section" id="metodos-pago">
+        <h4>Métodos de Pago</h4>
+        <p>
+          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+            <img src="${baseHYF}../img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
+          </a>
+        </p>
+        <p>
+          <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+            <img src="${baseHYF}../img/MetodosPago/MasterCard.png" alt="Mastercard" />
+            <span>Mastercard</span>
+          </a>
+        </p>
+        <p>
+          <a href="Carrito.html#modal-yape" class="metodo-pago-link">
+            <img src="${baseHYF}../img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
+          </a>
+        </p>
+      </div>
+    </div>
+    </div>
+    <!-- Créditos -->
+    <div class="footer-bottom">
+      <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+    </div>
+`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderFooter();
+  renderHeader();
+});
+
+/*
+  <!-- Logo y descripción -->
+  <div class="footer-section center">
+    <img
+      src="${base}../img/dolcezza.png"
+      alt="Logo Dolcezza"
+      class="footer-logo-grande"
+    />
+    <h3>Dolcezza</h3>
+    <p>Deliciosos postres artesanales elaborados con ingredientes frescos...</p>
+  </div>
+
+  <!-- Enlaces rápidos -->
+  <div class="footer-section">
+    <h4>Enlaces Rápidos</h4>
+    <ul>
+      <li><a href="${base}index.html">Inicio</a></li>
+      <li><a href="${base}Categorias/General.html">Postres</a></li>
+      <li><a href="${base}Contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Contacto -->
+  <div class="footer-section">
+    <h4>Contáctanos</h4>
+    <p>
+      <a href="https://wa.me/51945027855" target="_blank">
+        <img src="${base}../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+      </a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
+        <img src="${base}../img/instagram.svg" alt="Instagram" />
+        <span>Dolcezza.freshcooking</span>
+      </a>
+    </p>
+    <p>📍 Chiclayo, Perú</p>
+  </div>
+  <!---Métodos de Pago -->
+  <div class="footer-section">
+    <h4>Métodos de Pago</h4>
+    <p>
+      <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+        <img src="${base}../img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
+      </a>
+    </p>
+    <p>
+      <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
+        <img src="${base}../img/MetodosPago/MasterCard.png" alt="Mastercard" /><span
+          >Mastercard</span
+        >
+      </a>
+    </p>
+    <p>
+      <a href="Carrito.html#modal-yape" class="metodo-pago-link">
+        <img src="${base}../img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
+      </a>
+    </p>
+  </div>
+
+<!-- Créditos -->
+<div class="footer-bottom">
+  <p>© 2025 Dolcezza Fresh Cooking. Todos los derechos reservados.</p>
+</div>
+*/
+
