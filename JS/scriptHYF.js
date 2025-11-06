@@ -2,9 +2,9 @@ function rutaBase() {
   const path = window.location.pathname.split('#')[0].split('?')[0];
   const partes = path.split('/').filter(Boolean);
 
-  const iHtml = partes.indexOf('docs');
+  const iHtml = partes.indexOf('html');
 
-  if (iHtml === -1) return 'docs/';
+  if (iHtml === -1) return 'html/';
 
   const esArchivo = partes[partes.length - 1].includes('.');
   const dirs = esArchivo ? partes.slice(0, -1) : partes;
@@ -20,14 +20,14 @@ function renderHeader() {
   header_container.innerHTML = "";
   header_container.innerHTML = `
     <div class="logo-container">
-      <a href="${baseHYF}index.html" class="logo-link">
+      <a href="/index.html" class="logo-link">
         <img src="/img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
       </a>
-      <a href="${baseHYF}index.html"><span class="titulo-sitio">Dolcezza Fresh Cooking</span></a>
+      <a href="/index.html"><span class="titulo-sitio">Dolcezza Fresh Cooking</span></a>
     </div>
     <nav class="nav" id="nav">
       <ul class="menu-principal">
-        <li><a href="${baseHYF}index.html">Inicio</a></li>
+        <li><a href="/index.html">Inicio</a></li>
 
         <li class="menu-productos">
           <input type="checkbox" id="toggle-productos" />
@@ -129,7 +129,7 @@ function renderFooter() {
       <div class="footer-section" id="enlace-rapidos">
         <h4>Enlaces Rápidos</h4>
         <ul>
-          <li><a href="${baseHYF}index.html">Inicio</a></li>
+          <li><a href="/index.html">Inicio</a></li>
           <li><a href="${baseHYF}Categorias/General.html">Postres</a></li>
           <li><a href="${baseHYF}Contacto.html">Contacto</a></li>
         </ul>
