@@ -2,9 +2,9 @@ function rutaBase() {
   const path = window.location.pathname.split('#')[0].split('?')[0];
   const partes = path.split('/').filter(Boolean);
 
-  const iHtml = partes.indexOf('docs');
+  const iHtml = partes.indexOf('html');
 
-  if (iHtml === -1) return 'docs/';
+  if (iHtml === -1) return 'html/';
 
   const esArchivo = partes[partes.length - 1].includes('.');
   const dirs = esArchivo ? partes.slice(0, -1) : partes;
@@ -21,7 +21,7 @@ function renderHeader() {
   header_container.innerHTML = `
     <div class="logo-container">
       <a href="${baseHYF}index.html" class="logo-link">
-        <img src="${baseHYF}../img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
+        <img src="/img/dolcezza.png" alt="Logo Dolcezza" class="logo" />
       </a>
       <a href="${baseHYF}index.html"><span class="titulo-sitio">Dolcezza Fresh Cooking</span></a>
     </div>
@@ -44,7 +44,7 @@ function renderHeader() {
           <input type="checkbox" id="toggle-usuario" />
           <label for="toggle-usuario" id="user-menu" class="hamburguesa">
             <img
-              src="${baseHYF}../img/icon/usuario.png"
+              src="/img/icon/usuario.png"
               alt="userIMG"
               class="imgUser"
             />
@@ -57,7 +57,7 @@ function renderHeader() {
         </li>
         <div>
           <a href="${baseHYF}Carrito.html" class="cart-icon">
-            <img src="${baseHYF}../img/car.png" alt="Carrito" class="icon-small" />
+            <img src="/img/car.png" alt="Carrito" class="icon-small" />
           </a>
         </div>
       </ul>
@@ -78,7 +78,7 @@ function renderHeader() {
   if (userMenu && submenu) {
     if (usuario) {
       userMenu.innerHTML = `
-        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="/img/icon/usuario.png" alt="userIMG" class="imgUser">
         ${usuario.nombres.split(" ")[0]} ▾
         `;
       submenu.innerHTML = `
@@ -90,7 +90,7 @@ function renderHeader() {
       };
     } else {
       userMenu.innerHTML = `
-        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="/img/icon/usuario.png" alt="userIMG" class="imgUser">
         Iniciar Sesión ▾
       `;
       submenu.innerHTML = `
@@ -117,7 +117,7 @@ function renderFooter() {
       <!-- Logo y descripción -->
       <div class="footer-section center">
         <img
-          src="${baseHYF}../img/dolcezza.png"
+          src="/img/dolcezza.png"
           alt="Logo Dolcezza"
           class="footer-logo-grande"
         />
@@ -140,12 +140,12 @@ function renderFooter() {
         <h4>Contáctanos</h4>
         <p>
           <a href="https://wa.me/51945027855" target="_blank">
-            <img src="${baseHYF}../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+            <img src="/img/ws.png" alt="WhatsApp" /> <span>945027855</span>
           </a>
         </p>
         <p>
           <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
-            <img src="${baseHYF}../img/instagram.svg" alt="Instagram" />
+            <img src="/img/instagram.svg" alt="Instagram" />
             <span>Dolcezza.freshcooking</span>
           </a>
         </p>
@@ -157,18 +157,18 @@ function renderFooter() {
         <h4>Métodos de Pago</h4>
         <p>
           <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="${baseHYF}../img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
+            <img src="/img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
           </a>
         </p>
         <p>
           <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-            <img src="${baseHYF}../img/MetodosPago/MasterCard.png" alt="Mastercard" />
+            <img src="/img/MetodosPago/MasterCard.png" alt="Mastercard" />
             <span>Mastercard</span>
           </a>
         </p>
         <p>
           <a href="Carrito.html#modal-yape" class="metodo-pago-link">
-            <img src="${baseHYF}../img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
+            <img src="/img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
           </a>
         </p>
       </div>
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- Logo y descripción -->
   <div class="footer-section center">
     <img
-      src="${base}../img/dolcezza.png"
+      src="/img/dolcezza.png"
       alt="Logo Dolcezza"
       class="footer-logo-grande"
     />
@@ -213,12 +213,12 @@ document.addEventListener('DOMContentLoaded', () => {
     <h4>Contáctanos</h4>
     <p>
       <a href="https://wa.me/51945027855" target="_blank">
-        <img src="${base}../img/ws.png" alt="WhatsApp" /> <span>945027855</span>
+        <img src="/img/ws.png" alt="WhatsApp" /> <span>945027855</span>
       </a>
     </p>
     <p>
       <a href="https://www.instagram.com/dolcezza.freshcooking" target="_blank">
-        <img src="${base}../img/instagram.svg" alt="Instagram" />
+        <img src="/img/instagram.svg" alt="Instagram" />
         <span>Dolcezza.freshcooking</span>
       </a>
     </p>
@@ -229,19 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
     <h4>Métodos de Pago</h4>
     <p>
       <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-        <img src="${base}../img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
+        <img src="/img/MetodosPago/VISA.png" alt="Visa" /><span>Visa</span>
       </a>
     </p>
     <p>
       <a href="Carrito.html#modal-tarjeta" class="metodo-pago-link">
-        <img src="${base}../img/MetodosPago/MasterCard.png" alt="Mastercard" /><span
+        <img src="/img/MetodosPago/MasterCard.png" alt="Mastercard" /><span
           >Mastercard</span
         >
       </a>
     </p>
     <p>
       <a href="Carrito.html#modal-yape" class="metodo-pago-link">
-        <img src="${base}../img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
+        <img src="/img/MetodosPago/YAPE.png" alt="Yape" /><span>Yape</span>
       </a>
     </p>
   </div>

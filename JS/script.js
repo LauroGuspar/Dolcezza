@@ -2,9 +2,9 @@ function rutaBase() {
   const path = window.location.pathname.split('#')[0].split('?')[0];
   const partes = path.split('/').filter(Boolean);
 
-  const iHtml = partes.indexOf('docs');
+  const iHtml = partes.indexOf('html');
 
-  if (iHtml === -1) return 'docs/';
+  if (iHtml === -1) return 'html/';
 
   const esArchivo = partes[partes.length - 1].includes('.');
   const dirs = esArchivo ? partes.slice(0, -1) : partes;
@@ -75,7 +75,7 @@ function mostrarCarrito() {
       <div class="col-info">S/${subtotal.toFixed(2)}</div>
       <div class="col-accion">
         <button class="eliminar-item" data-nombre="${item.nombre}" title="Eliminar">
-        <img src="../img/eliminar.png" class="icono-eliminar"
+        <img src="/img/eliminar.png" class="icono-eliminar"
         </button>
       </div>
       
@@ -207,7 +207,7 @@ function actualizarMenuUsuario() {
   if (userMenu && submenu) {
     if (usuario) {
       userMenu.innerHTML = `
-        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="/img/icon/usuario.png" alt="userIMG" class="imgUser">
         ${usuario.nombres.split(" ")[0]} ▾
         `;
       submenu.innerHTML = `
@@ -219,7 +219,7 @@ function actualizarMenuUsuario() {
       };
     } else {
       userMenu.innerHTML = `
-        <img src="${base}../img/icon/usuario.png" alt="userIMG" class="imgUser">
+        <img src="/img/icon/usuario.png" alt="userIMG" class="imgUser">
         Iniciar Sesión ▾
       `;
       submenu.innerHTML = `
