@@ -33,13 +33,13 @@ function renderHeader() {
           <input type="checkbox" id="toggle-productos" />
           <label for="toggle-productos" class="hamburguesa">Productos ▾</label>
           <ul class="submenu">
-            <li><a href="/html/Categorias/General.html">General</a></li>
-            <li><a href="/html/Categorias/Postres/Chocolateria.html">Chocolateria</a></li>
-            <li><a href="/html/Categorias/Postres/Dulces.html">Dulces</a></li>
-            <li><a href="/html/Categorias/Postres/Salados.html">Salados</a></li>
+            <li><a href="${baseHYF}Categorias/General.html">General</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Chocolateria.html">Chocolateria</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Dulces.html">Dulces</a></li>
+            <li><a href="${baseHYF}Categorias/Postres/Salados.html">Salados</a></li>
           </ul>
         </li>
-        <li><a href="/html/Contacto.html">Contacto</a></li>
+        <li><a href="${baseHYF}Contacto.html">Contacto</a></li>
         <li class="menu-usuario">
           <input type="checkbox" id="toggle-usuario" />
           <label for="toggle-usuario" id="user-menu" class="hamburguesa">
@@ -51,12 +51,12 @@ function renderHeader() {
             Iniciar Sesión ▾
           </label>
           <ul class="submenu" id="user-dropdown">
-            <li><a href="/html/registro.html">Registrar</a></li>
-            <li><a href="/html/login.html">Iniciar sesión</a></li>
+            <li><a href="${baseHYF}registro.html">Registrar</a></li>
+            <li><a href="${baseHYF}login.html">Iniciar sesión</a></li>
           </ul>
         </li>
         <div>
-          <a href="/html/Carrito.html" class="cart-icon">
+          <a href="${baseHYF}Carrito.html" class="cart-icon">
             <img src="/img/car.png" alt="Carrito" class="icon-small" />
           </a>
         </div>
@@ -94,8 +94,8 @@ function renderHeader() {
         Iniciar Sesión ▾
       `;
       submenu.innerHTML = `
-        <li><a href="/html/registro.html">Registrar</a></li>
-        <li><a href="/html/login.html">Iniciar sesión</a></li>
+        <li><a href="${base}registro.html">Registrar</a></li>
+        <li><a href="${base}login.html">Iniciar sesión</a></li>
       `;
     }
   }
@@ -130,8 +130,8 @@ function renderFooter() {
         <h4>Enlaces Rápidos</h4>
         <ul>
           <li><a href="/index.html">Inicio</a></li>
-          <li><a href="/html/Categorias/General.html">Postres</a></li>
-          <li><a href="/html/Contacto.html">Contacto</a></li>
+          <li><a href="${baseHYF}Categorias/General.html">Postres</a></li>
+          <li><a href="${baseHYF}Contacto.html">Contacto</a></li>
         </ul>
       </div>
 

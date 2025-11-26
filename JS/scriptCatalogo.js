@@ -18,7 +18,7 @@ const Postres = [
    //Chocolateria
    {
       id: "Chocolateria",
-      img: "/img/Catálogo/Postres/Chocolateria/Brownie.jpg",
+      img: "../img/Catálogo/Postres/Chocolateria/Brownie.jpg",
       data_nombre: "Brownie",
       data_precio: "10",
       data_descripcion: "Delicioso brownie con trozos de chocolate.",
@@ -26,14 +26,14 @@ const Postres = [
 
    {
       id: "Chocolateria",
-      img: "/img/Catálogo/Postres/Chocolateria/Chocochip.jpg",
+      img: "../img/Catálogo/Postres/Chocolateria/Chocochip.jpg",
       data_nombre: "Galleta de Chocochip",
       data_precio: "5",
       data_descripcion: "Deliciosas galletas con chispas de chocolate."
    },
    {
       id: "Chocolateria",
-      img: "/img/Catálogo/Postres/Chocolateria/Chocotejas.webp",
+      img: "../img/Catálogo/Postres/Chocolateria/Chocotejas.webp",
       data_nombre: "Chocotejas Artesanales",
       data_precio: "3",
       data_descripcion: "Deliciosas Chocotejas artesanales rellenas.",
@@ -41,7 +41,7 @@ const Postres = [
 
    {
       id: "Chocolateria",
-      img: "/img/Catálogo/Postres/Chocolateria/Torta_Chocolate.jpg",
+      img: "../img/Catálogo/Postres/Chocolateria/Torta_Chocolate.jpg",
       data_nombre: "Torta Húmeda De Chocolate",
       data_precio: "15",
       data_descripcion: "Deliciosa Torta Húmeda de Chocolate.",
@@ -49,7 +49,7 @@ const Postres = [
 
    {
       id: "Chocolateria",
-      img: "/img/Catálogo/Postres/Chocolateria/trufas.jpg",
+      img: "../img/Catálogo/Postres/Chocolateria/trufas.jpg",
       data_nombre: "Trufas Con Relleno De Coco",
       data_precio: "3",
       data_descripcion: "Deliciosas trufas con relleno de coco.",
@@ -58,7 +58,7 @@ const Postres = [
    //Dulces
    {
       id: "Dulces",
-      img: "/img/Catálogo/Postres/Dulces/Pastel_Blanco.jpg",
+      img: "../img/Catálogo/Postres/Dulces/Pastel_Blanco.jpg",
       data_nombre: "Pastel con relleno de Chocolate Blanco",
       data_precio: "15",
       data_descripcion: "Deliciosa Torta húmeda de Chocolate",
@@ -66,7 +66,7 @@ const Postres = [
 
    {
       id: "Dulces",
-      img: "/img/Catálogo/Postres/Dulces/Cheesecake_Fresa.webp",
+      img: "../img/Catálogo/Postres/Dulces/Cheesecake_Fresa.webp",
       data_nombre: "Cheesecake de Fresa",
       data_precio: "12",
       data_descripcion: "Delicioso cheesecake con cobertura de fresa.",
@@ -74,7 +74,7 @@ const Postres = [
 
    {
       id: "Dulces",
-      img: "/img/Catálogo/Postres/Dulces/Cheesecake_Maracuyá.jpg",
+      img: "../img/Catálogo/Postres/Dulces/Cheesecake_Maracuyá.jpg",
       data_nombre: "Cheesecake de Maracuyá",
       data_precio: "12",
       data_descripcion: "Delicioso cheesecake con cobertura de maracuyá.",
@@ -82,7 +82,7 @@ const Postres = [
 
    {
       id: "Dulces",
-      img: "/img/Catálogo/Postres/Dulces/Macarrones.jpeg",
+      img: "../img/Catálogo/Postres/Dulces/Macarrones.jpeg",
       data_nombre: "Macarrones",
       data_precio: "10",
       data_descripcion: "Deliciosos macarrones de diferentes sabores.",
@@ -91,7 +91,7 @@ const Postres = [
    //Salados
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/canapes.jpg",
+      img: "../img/Catálogo/Postres/Salados/canapes.jpg",
       data_nombre: "Canapes",
       data_precio: "10",
       data_descripcion: "Deliciosos canapés variados.",
@@ -99,7 +99,7 @@ const Postres = [
 
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/empanadas.jpg",
+      img: "../img/Catálogo/Postres/Salados/empanadas.jpg",
       data_nombre: "Empanadas de jamón y queso",
       data_precio: "15",
       data_descripcion: "Deliciosas empanadas rellenas de jamón y queso.",
@@ -107,7 +107,7 @@ const Postres = [
 
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/frutos_secos.jpg",
+      img: "../img/Catálogo/Postres/Salados/frutos_secos.jpg",
       data_nombre: "Barra de Frutos Secos",
       data_precio: "8",
       data_descripcion: "Deliciosa barra de frutos secos.",
@@ -115,7 +115,7 @@ const Postres = [
 
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/tarta_queso.jpg",
+      img: "../img/Catálogo/Postres/Salados/tarta_queso.jpg",
       data_nombre: "Tarta De Queso",
       data_precio: "15",
       data_descripcion: "Deliciosa tarta de queso.",
@@ -123,7 +123,7 @@ const Postres = [
 
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/cheesecake_azul.jpg",
+      img: "../img/Catálogo/Postres/Salados/cheesecake_azul.jpg",
       data_nombre: "Cheesecake Con Queso Azul",
       data_precio: "15",
       data_descripcion: "Delicioso cheesecake con queso azul.",
@@ -131,7 +131,7 @@ const Postres = [
 
    {
       id: "Salados",
-      img: "/img/Catálogo/Postres/Salados/cheesecake-salado.jpg",
+      img: "../img/Catálogo/Postres/Salados/cheesecake-salado.jpg",
       data_nombre: "Cheesecake Salado",
       data_precio: "15",
       data_descripcion: "Delicioso cheesecake salado.",
